@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pelúcio — Portfólio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-container">
+      <div class="header-logo">
+        <a href="#home">
+           <img src="images/logo.png" alt="Pedro logo">
+        </a>
+      </div>
+
+      <button class="mobile-menu-btn" aria-label="Abrir Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="menu">
+        <a href="#work">Gallery</a>
+        <a href="#about">Who</a>
+        <a href="#contact">Contact</a>
+        <div class="socials-icons">
+            <a href="https://twitter.com/SEU_LINK" target="_blank"><img src="images/icon-twitter.png" alt="TW"></a>
+            <a href="https://behance.net/SEU_LINK" target="_blank"><img src="images/icon-behance.png" alt="BE"></a>
+            <a href="https://instagram.com/SEU_LINK" target="_blank"><img src="images/icon-insta.png" alt="IG"></a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <h1>Resenha é Coisa Séria!!</h1>
+        <p class="subtitle">Cartoon illustration and design inspired by 80s and 90s aesthetics</p>
+      </div>
+    </section>
+
+    <section class="gallery" id="work">
+      <div class="container gallery-grid">
+        <img src="images/imgart1.png" alt="Artwork">
+        <img src="images/imgart2.png" alt="Artwork">
+        <img src="images/imgart3.png" alt="Artwork">
+        <img src="images/imgart4.png" alt="Artwork">
+        <img src="images/imgart5.png" alt="Artwork">
+        <img src="images/imgart6.png" alt="Artwork">
+        <img src="images/imgart7.png" alt="Artwork">
+        <img src="images/imgart8.png" alt="Artwork">
+        <img src="images/imgart9.png" alt="Artwork">
+        <img src="images/imgart10.png" alt="Artwork">
+        <img src="images/imgart11.png" alt="Artwork">
+        <img src="images/imgart12.png" alt="Artwork">
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container">
+        <h2 class="section-title">Hi, I’m Pedro!</h2>
+
+        <div class="about-content">
+          <div class="about-illustration">
+            <img src="images/imgabout.png" alt="Illustration of Pedro" />
+          </div>
+
+          <div class="about-text">
+            <p>
+              Also known as Pelucio, a freelancer and illustrator from Brazil. My art is
+              heavily influenced by the vibrant cartoon styles of the 80s and 90s.
+              Nostalgic and contemporary elements are part of my work.
+            </p>
+            <p>
+              Ever since I was little, art has been my jam. The magic of bringing life
+              to inanimate stuff making everything look way cooler has always fascinated me.
+            </p>
+            <p>
+              So, at some point, making art started to be something I've been working on.
+              Digital art, creating brand logos for clothes and stuff like that along my journey
+              till now, but always craving for seeking out new opportunities to share my art to the world.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="products">
+      <div class="container">
+        <h2 class="section-title center-title">Products and Design</h2>
+        <p class="products-subtitle">Check out some designs. Click on side images to navigate.</p>
+
+        <div class="carousel-wrapper">
+          <div class="products-carousel">
+            <div class="product-item" data-index="0"><img src="images/product1.png" alt="Design 1"></div>
+            <div class="product-item" data-index="1"><img src="images/product2.png" alt="Design 2"></div>
+            <div class="product-item active" data-index="2"><img src="images/product3.png" alt="Design 3"></div>
+            <div class="product-item" data-index="3"><img src="images/product4.png" alt="Design 4"></div>
+            <div class="product-item" data-index="4"><img src="images/product5.png" alt="Design 5"></div>
+            <div class="product-item" data-index="5"><img src="images/product6.png" alt="Design 6"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-wrapper">
+        
+        <div class="contact-left">
+            <h2 class="contact-title">LET’S TALK?</h2>
+            <p class="contact-text">
+            I'm always excited to chat to talk about what I love doing.
+            If you just want to know the new things I've on or support my work,
+            follow me on my social medias.
+            </p>
+            <div class="contact-socials-big">
+                <a href="https://twitter.com/SEU_USER_AQUI" target="_blank">
+                    <img src="images/icon-twitter.png" alt="Twitter">
+                </a>
+                
+                <a href="https://behance.net/pelucio" target="_blank">
+                    <img src="images/icon-behance.png" alt="Behance">
+                </a>
+                
+                <a href="https://instagram.com/dinamite.studio" target="_blank">
+                    <img src="images/icon-insta.png" alt="Instagram">
+                </a>
+            </div>
+        </div>
+
+        <div class="contact-form-area">
+            <div class="form-header">
+                <h3>Contact</h3>
+                <p>Fill the fields here to send an easy message to <a href="mailto:dinamite.studioo@gmail.com">dinamite.studioo@gmail.com</a></p>
+            </div>
+            <form id="contact-form">
+    <input type="hidden" name="_subject" value="Novo contato do Portfólio!">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+
+    <label for="name">Name *</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">Email *</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="message">Message *</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+    
+    <button type="submit">ENVIAR</button>
+</form>
+            
+<input type="hidden" name="_next" value="...">
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Pelúcio</p>
+  </footer>
+<script>
+    const items = document.querySelectorAll('.product-item');
+    const totalItems = items.length;
+    let activeIndex = 0; // Começa pelo primeiro
+    let autoPlayInterval;
+
+    function updateCarousel() {
+      // 1. Limpa todas as classes de todos os itens
+      items.forEach(item => {
+        item.classList.remove('active', 'prev', 'next');
+      });
+
+      // 2. Calcula os índices (Matemática para o Loop Infinito)
+      // Se activeIndex for 0, o anterior é o último da lista
+      const prevIndex = (activeIndex - 1 + totalItems) % totalItems;
+      
+      // Se activeIndex for o último, o próximo é o 0
+      const nextIndex = (activeIndex + 1) % totalItems;
+
+      // 3. Adiciona as classes nos itens corretos
+      items[activeIndex].classList.add('active');
+      items[prevIndex].classList.add('prev');
+      items[nextIndex].classList.add('next');
+    }
+
+    function startAutoPlay() {
+      clearInterval(autoPlayInterval);
+      autoPlayInterval = setInterval(() => {
+        moveNext();
+      }, 10000); // 10 segundos
+    }
+
+    function moveNext() {
+      activeIndex = (activeIndex + 1) % totalItems;
+      updateCarousel();
+    }
+
+    function movePrev() {
+      activeIndex = (activeIndex - 1 + totalItems) % totalItems;
+      updateCarousel();
+    }
+
+    // Configura os cliques
+    items.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        // Se clicar no item da Esquerda (Prev)
+        if (item.classList.contains('prev')) {
+          movePrev();
+          startAutoPlay(); // Reinicia o contador
+        }
+        // Se clicar no item da Direita (Next)
+        else if (item.classList.contains('next')) {
+          moveNext();
+          startAutoPlay(); // Reinicia o contador
+        }
+      });
+    });
+
+    // Inicia
+    updateCarousel();
+    startAutoPlay();
+  </script>
+  <script>
+    const form = document.getElementById("contact-form");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault(); // 1. Impede a página de recarregar
+        
+        const formData = new FormData(form);
+        const button = form.querySelector("button");
+        const originalText = button.innerText;
+
+        // Muda o texto do botão para indicar que está carregando
+        button.innerText = "ENVIANDO...";
+
+        // 2. Envia para o FormSubmit usando o modo AJAX
+        fetch("https://formsubmit.co/ajax/dinamite.studioo@gmail.com", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            // 3. SUCESSO: Limpa os campos
+            form.reset();
+            alert("Mensagem enviada com sucesso!"); // Um aviso simples pra confirmar
+            button.innerText = originalText; // Volta o texto do botão
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            alert("Houve um erro ao enviar. Tente novamente.");
+            button.innerText = originalText;
+        });
+    });
+  </script>
+  <script>
+    /* ... seus scripts do carrossel e form ficam aqui ... */
+
+    // SCRIPT DO MENU MOBILE
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const menuNav = document.querySelector('.menu');
+    const menuLinks = document.querySelectorAll('.menu a'); // Pega os links
+
+    // Abrir/Fechar ao clicar no botão
+    menuBtn.addEventListener('click', () => {
+      menuNav.classList.toggle('active');
+    });
+
+    // Fechar o menu automaticamente quando clicar em um link (Gallery, Who, etc)
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuNav.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
