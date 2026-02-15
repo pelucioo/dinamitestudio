@@ -1,10 +1,13 @@
-/* --- DECLARAÇÃO DE FONTES --- */
-/* Exemplo: Se o arquivo estiver na pasta 'fonts' */
+/* ==========================================================================
+   1. FONTES (CORREÇÃO PARA MOBILE)
+   ========================================================================== */
 
 @font-face {
   font-family: 'futura-extrabold';
-  /* IMPORTANTE: O nome do arquivo tem que ser IDÊNTICO, inclusive maiúsculas/minúsculas */
-  src: url('fonts/Futura-ExtraBold.ttf') format('truetype'); 
+  /* TRUQUE: Usamos o link COMPLETO para o celular não se perder nas pastas.
+     Se a fonte não carregar, verifique se o nome do arquivo no GitHub é 
+     exatamente 'Futura-ExtraBold.ttf' (Maiúsculas importam!) */
+  src: url('https://pelucioo.github.io/portfolio/fonts/Futura-ExtraBold.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
 }
@@ -16,20 +19,26 @@
   font-style: normal;
 }
 
-/* ... mantenha o reset básico e o body ... */
-/* --- RESET BÁSICO --- */
+/* ==========================================================================
+   2. RESET E GERAL
+   ========================================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  /* Fonte do corpo do texto */
   font-family: 'Anonymous Pro', monospace;
   line-height: 1.6;
   color: #333;
   background-color: #fff;
+  /* Espaço para o header fixo não cobrir o conteúdo */
+  padding-top: 120px; 
 }
 
 img {
@@ -42,7 +51,6 @@ a {
   color: inherit;
 }
 
-/* Container centralizado */
 .container {
   width: 90%;
   max-width: 1200px;
@@ -50,45 +58,21 @@ a {
   padding: 0 20px;
 }
 
-/* --- HEADER --- */
-/* --- HEADER FIXO --- */
-/* --- HEADER FIXO --- */
-/* --- HEADER FIXO --- */
+/* ==========================================================================
+   3. HEADER (VERSÃO DESKTOP)
+   ========================================================================== */
 .header {
   background-color: #2b65ec;
   color: #fff;
-  /* MUDANÇA 1: Padding bem pequeno (era 20px ou 10px, agora 5px) */
-  padding: 5px 0; 
+  padding: 10px 0;
   
+  /* Fixar no topo */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.header-logo img {
-  height: 100px !important;  /* O !important obriga o navegador a obedecer */
-  width: auto !important;
-  max-height: none !important;
-  display: block;
-}
-
-/* --- AJUSTE DO CORPO --- */
-body {
-  font-family: 'Anonymous Pro', monospace;
-  line-height: 1.6;
-  color: #333;
-  background-color: #fff;
-  
-  /* IMPORTANTE: Empurra o site para baixo para não ficar atrás do menu fixo */
-  padding-top: 160px; 
-}
-
-/* Rolagem Suave (Para não pular seco quando clicar na logo) */
-html {
-  scroll-behavior: smooth;
 }
 
 .header-container {
@@ -98,47 +82,46 @@ html {
 }
 
 .header-logo img {
-  height: 200px;
+  height: 80px; /* Tamanho controlado no PC */
+  width: auto;
+  display: block;
 }
 
 .menu {
   display: flex;
   align-items: center;
   gap: 30px;
-  /* Fonte do Menu */
   font-family: 'futura-extrabold', sans-serif;
   text-transform: uppercase;
   font-size: 1.1rem;
 }
 
 .socials-icons {
-  margin-left: 20px;
   display: flex;
   gap: 15px;
-}
-/* --- ÍCONES SOCIAIS DO HEADER --- */
-.socials-icons {
-  display: flex;
-  gap: 15px; /* Espaço entre os ícones */
   align-items: center;
-}
-
-.socials-icons a {
-  display: flex; /* Remove espaços estranhos abaixo da imagem */
+  margin-left: 20px;
 }
 
 .socials-icons img {
-  width: 24px; /* Tamanho do ícone. Aumente se achar pequeno */
-  height: auto;
-  filter: brightness(0) invert(1); /* Deixa o ícone BRANCO (se o fundo for azul) */
+  width: 24px;
+  filter: brightness(0) invert(1); /* Deixa branco */
   transition: transform 0.2s;
 }
 
-/* Efeito ao passar o mouse */
 .socials-icons img:hover {
-  transform: scale(1.2); /* Aumenta um pouquinho */
-  opacity: 0.8;
+  transform: scale(1.2);
 }
+
+/* Botão Mobile (Escondido no PC) */
+.mobile-menu-btn {
+  display: none;
+}
+
+/* ==========================================================================
+   4. SEÇÕES (HERO, GALERIA, SOBRE)
+   ========================================================================== */
+
 /* --- HERO --- */
 .hero {
   text-align: center;
@@ -146,34 +129,34 @@ html {
 }
 
 .hero h1 {
-  /* Fonte do Título Principal */
   font-family: 'futura-extrabold', sans-serif;
   font-size: 3rem;
   color: #2b65ec;
   margin-bottom: 10px;
   text-transform: uppercase;
+  line-height: 1.1;
 }
 
 .subtitle {
   font-size: 1.1rem;
   color: #555;
-  font-family: 'Anonymous Pro', monospace;
 }
 
-/* --- GALERIA (WORK) --- */
+/* --- GALERIA GRID --- */
 .gallery {
   padding-bottom: 60px;
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
 .gallery-grid img {
   width: 100%;
   height: auto;
+  border-radius: 8px;
   object-fit: cover;
   transition: transform 0.2s;
 }
@@ -185,11 +168,9 @@ html {
 /* --- ABOUT --- */
 .about {
   padding: 80px 0;
-  background-color: #fff;
 }
 
 .section-title {
-  /* Títulos das seções */
   font-family: 'futura-extrabold', sans-serif;
   font-size: 2.5rem;
   color: #2b65ec;
@@ -216,17 +197,12 @@ html {
   text-align: justify;
 }
 
-.about-text p {
-  margin-bottom: 20px;
-}
-
-/* --- PRODUCTS --- */
+/* ==========================================================================
+   5. CARROSSEL (PRODUCTS)
+   ========================================================================== */
 .products {
   padding: 60px 0 100px;
-}
-
-.center-title {
-  text-align: center;
+  overflow: hidden; /* Evita rolagem horizontal */
 }
 
 .products-subtitle {
@@ -237,19 +213,63 @@ html {
   margin-right: auto;
 }
 
-.products-grid {
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  height: 450px;
   display: flex;
   justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
 }
 
 .product-item {
-  flex: 1;
-  min-width: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 350px;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* --- CONTACT --- */
+.product-item img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Estados do Carrossel */
+.product-item.active {
+  opacity: 1;
+  z-index: 10;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+}
+
+.product-item.prev {
+  opacity: 0.6;
+  z-index: 5;
+  left: 20%;
+  transform: translate(-50%, -50%) scale(0.7);
+  filter: blur(3px) grayscale(40%);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.product-item.next {
+  opacity: 0.6;
+  z-index: 5;
+  left: 80%;
+  transform: translate(-50%, -50%) scale(0.7);
+  filter: blur(3px) grayscale(40%);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* ==========================================================================
+   6. CONTATO E FOOTER
+   ========================================================================== */
 .contact {
   background: linear-gradient(180deg, #2b65ec 0%, #4a8eff 100%);
   color: #fff;
@@ -262,7 +282,7 @@ html {
   align-items: flex-start;
 }
 
-.contact-left {
+.contact-left, .contact-form-area {
   flex: 1;
 }
 
@@ -273,34 +293,7 @@ html {
   text-transform: uppercase;
 }
 
-.contact-text {
-  margin-bottom: 40px;
-  max-width: 400px;
-  font-family: 'Anonymous Pro', monospace;
-}
-
-.contact-form-area {
-  flex: 1;
-  background: transparent;
-}
-
-.form-header h3 {
-  font-family: 'futura-extrabold', sans-serif;
-  font-size: 2rem;
-  color: #000;
-  margin-bottom: 10px;
-}
-
-.form-header p {
-    color: #000;
-}
-
-.form-header p a {
-  text-decoration: underline;
-  font-weight: bold;
-}
-
-/* Estilo do Formulário */
+/* Formulário */
 form {
   display: flex;
   flex-direction: column;
@@ -309,7 +302,6 @@ form {
 }
 
 label {
-  font-size: 0.9rem;
   font-weight: bold;
   color: #000;
   font-family: 'futura-extrabold', sans-serif;
@@ -320,7 +312,7 @@ input, textarea {
   border-radius: 20px;
   border: none;
   width: 100%;
-  font-family: 'Anonymous Pro', monospace; /* Texto digitado no input */
+  font-family: 'Anonymous Pro', monospace;
 }
 
 button {
@@ -331,324 +323,157 @@ button {
   font-family: 'futura-extrabold', sans-serif;
   font-size: 1rem;
   cursor: pointer;
-  align-self: flex-start;
   margin-top: 10px;
   text-transform: uppercase;
 }
 
-button:hover {
-  background-color: #fff;
-}
-
-/* --- FOOTER --- */
-footer {
-  background-color: #2b65ec;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-}
-
-/* --- RESPONSIVIDADE (MOBILE) --- */
-@media (max-width: 768px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .about-content,
-  .contact-wrapper {
-    flex-direction: column;
-  }
-  
-  .header-container {
-      flex-direction: column;
-      gap: 15px;
-  }
-}
-
-/* --- VERSÃO MOBILE (Responsividade) --- */
-@media (max-width: 768px) {
-  
-  /* 1. Ajuste do Container Geral */
-  .container {
-    width: 90%;
-    padding: 0 15px; /* Margem lateral menor */
-  }
-
-  /* 2. Header (Menu e Logo) */
-  .header-container {
-    flex-direction: column; /* Empilha logo, menu e sociais */
-    gap: 10px;
-    text-align: center;
-  }
-
-  .menu {
-    flex-direction: column; /* Links um abaixo do outro */
-    gap: 15px;
-  }
-  
-  .socials-icons {
-    margin-left: 0; /* Remove margem lateral */
-    justify-content: center;
-  }
-
-  /* 3. Títulos menores para não quebrar */
-  .hero h1 {
-    font-size: 2rem; 
-    line-height: 1.1;
-  }
-  
-  .contact-title, .section-title {
-    font-size: 2rem;
-  }
-
-  /* 4. Galeria: Uma imagem por linha (para ficarem grandes) */
-  /* Dentro do @media (max-width: 768px) */
-  
-  .gallery-grid {
-    /* MUDANÇA: 'repeat(2, 1fr)' cria 2 colunas iguais */
-    grid-template-columns: repeat(2, 1fr) !important; 
-    
-    /* Dica: Diminuir o gap (espaço) no celular ajuda a caber melhor */
-    gap: 10px; 
-  }
-
-  /* 5. About (Quem Sou) */
-  .about-content {
-    flex-direction: column; /* Imagem em cima, texto embaixo */
-  }
-
-  .about-illustration {
-    width: 100%; /* Imagem ocupa toda a largura */
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .about-illustration img {
-    max-width: 250px; /* Limita o tamanho para não ficar gigante no cel */
-  }
-
-  /* 6. Products */
-  .products-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .product-item {
-    width: 100%;
-  }
-
-  /* 7. Contato */
-  .contact-wrapper {
-    flex-direction: column;
-  }
-
-  .contact-left, 
-  .contact-form-area {
-    width: 100%; /* Ocupam largura total */
-  }
-
-  .contact-text {
-    max-width: 100%; /* Texto ocupa a linha toda */
-  }
-  
-  /* Botão centralizado no mobile fica melhor */
-  button {
-    width: 100%; 
-    align-self: center;
-  }
-}
-/* --- CARROSSEL: APENAS 3 VISÍVEIS --- */
-.carousel-wrapper {
-  position: relative;
-  width: 100%;
-  height: 450px; /* Altura fixa necessária para posicionamento absoluto */
-  overflow: hidden;
+/* Ícones Sociais Grandes (Rodapé) */
+.contact-socials-big {
   display: flex;
-  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
 }
 
-.product-item {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0); /* Começa invisível e pequeno */
-  width: 350px; /* Largura da imagem central */
-  transition: all 0.5s ease-in-out;
-  opacity: 0; /* Invisível por padrão */
-  z-index: 0;
-  cursor: default;
-  pointer-events: none; /* Não clicável se estiver invisível */
-}
-
-.product-item img {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+.contact-socials-big img {
+  width: 40px !important;
+  height: auto !important;
+  filter: brightness(0) invert(1);
   display: block;
 }
 
-/* --- ESTADOS DE POSIÇÃO --- */
-
-/* 1. Item ATIVO (Centro) */
-.product-item.active {
-  opacity: 1;
-  z-index: 10;
-  transform: translate(-50%, -50%) scale(1);
-  filter: blur(0);
-  pointer-events: auto;
+footer {
+  background-color: #1a4bc9;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
 }
 
-/* 2. Item ANTERIOR (Esquerda) */
-.product-item.prev {
-  opacity: 0.6;
-  z-index: 5;
-  left: 20%; /* Posição na esquerda */
-  transform: translate(-50%, -50%) scale(0.7);
-  filter: blur(3px) grayscale(40%);
-  cursor: pointer;
-  pointer-events: auto;
-}
 
-/* 3. Item PRÓXIMO (Direita) */
-.product-item.next {
-  opacity: 0.6;
-  z-index: 5;
-  left: 80%; /* Posição na direita */
-  transform: translate(-50%, -50%) scale(0.7);
-  filter: blur(3px) grayscale(40%);
-  cursor: pointer;
-  pointer-events: auto;
-}
-
-/* Efeito Hover nas laterais */
-.product-item.prev:hover,
-.product-item.next:hover {
-  opacity: 0.9;
-  filter: blur(1px) grayscale(0%);
-}
-
-/* --- RESPONSIVIDADE --- */
+/* ==========================================================================
+   7. MOBILE FINAL (A CORREÇÃO DOS BUGS)
+   ========================================================================== */
 @media (max-width: 768px) {
+
+  /* --- 1. BOTÃO MOBILE (FIM DO TIJOLO BRANCO) --- */
+  .mobile-menu-btn {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    
+    /* Trava o tamanho */
+    width: 45px !important; 
+    height: 45px !important;
+    
+    /* Remove fundo e bordas */
+    background: transparent !important; 
+    border: none !important;
+    
+    cursor: pointer;
+    z-index: 2002;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .mobile-menu-btn span {
+    display: block;
+    width: 30px !important;
+    height: 3px !important;
+    background-color: #fff !important;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* --- 2. HEADER FIXO FINO --- */
+  .header {
+    height: 70px !important;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+  }
+
+  .header-container {
+    width: 90% !important;
+    display: flex !important;
+    justify-content: space-between !important; /* Logo na esq, Botão na dir */
+    align-items: center !important;
+    flex-direction: row !important; /* Garante linha, não coluna */
+  }
+
+  .header-logo img {
+    height: 40px !important; /* Logo pequena no cel */
+    width: auto !important;
+  }
+  
+  /* Ajuste para o conteúdo não ficar escondido atrás do menu */
+  body {
+    padding-top: 80px; 
+  }
+
+  /* --- 3. MENU OVERLAY (ARRUMADO O VAZAMENTO) --- */
+  .menu {
+    position: fixed !important;
+    top: 0;
+    right: -100% !important; /* Escondido */
+    width: 80% !important;
+    height: 100vh !important;
+    background-color: #2b65ec !important;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+    
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    
+    transition: right 0.3s ease-in-out;
+    z-index: 2000;
+  }
+
+  .menu.active {
+    right: 0 !important; /* Aparece */
+  }
+
+  .menu a {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  
+  .socials-icons {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  /* --- 4. LAYOUT GERAL MOBILE --- */
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px;
+  }
+
+  .about-content, .contact-wrapper {
+    flex-direction: column;
+  }
+
+  .about-illustration img {
+    max-width: 100%;
+  }
+
+  .contact-left, .contact-form-area {
+    width: 100%;
+  }
+
+  /* Ajuste Carrossel Mobile */
   .carousel-wrapper {
     height: 350px;
   }
   
   .product-item {
-    width: 220px; /* Imagens menores no celular */
-  }
-
-  /* Aproxima as laterais no mobile para não sumirem da tela */
-  .product-item.prev {
-    left: 15%; 
+    width: 220px;
   }
   
-  .product-item.next {
-    left: 85%;
-  }
-}
-@media (max-width: 768px) {
-  /* ... mantenha os outros códigos que já estavam aqui ... */
-
-  /* Adicione isso para soltar o menu no celular, se preferir */
-  .header {
-    position: relative; /* Menu deixa de ser fixo no celular */
-  }
-  
-  body {
-    padding-top: 0; /* Remove o espaço extra no celular */
-  }
-}
-/* --- ÍCONES SOCIAIS DO RODAPÉ (Contact) --- */
-.contact-socials-big {
-  display: flex;
-  gap: 25px; /* Espaço maior entre eles */
-  margin-top: 30px; /* Espaço para desgrudar do texto de cima */
-}
-
-.contact-socials-big a {
-  display: inline-block;
-  transition: transform 0.2s;
-}
-
-.contact-socials-big img {
-  width: 40px; /* Tamanho maior que o menu (que era 24px) */
-  height: auto;
-  
-  /* Filtro Mágico: Transforma os ícones pretos em BRANCO PURO */
-  filter: brightness(0) invert(1); 
-  
-  /* Se seus ícones já forem coloridos e quiser manter a cor, remova a linha do filter acima */
-}
-
-/* Efeito Hover (Ao passar o mouse) */
-.contact-socials-big a:hover {
-  transform: scale(1.1) rotate(-5deg); /* Dá uma leve inclinada e aumenta */
-  opacity: 0.9;
-}
-/* --- MENU MOBILE (HAMBÚRGUER) --- */
-
-/* Estilo do botão (escondido no PC) */
-.mobile-menu-btn {
-  display: none;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.mobile-menu-btn span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  border-radius: 2px;
-  transition: 0.3s;
-}
-
-/* --- RESPONSIVIDADE --- */
-@media (max-width: 768px) {
-  
-  /* Arruma a barra fixa para ficar fina */
-  .header-container {
-    justify-content: space-between;
-    padding: 0 20px;
-  }
-
-  /* Mostra o botão de hambúrguer */
-  .mobile-menu-btn {
-    display: flex; 
-    z-index: 2000; /* Fica acima de tudo */
-  }
-
-  /* Esconde o menu normal e prepara para ser aberto */
-  .menu {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Começa escondido fora da tela na direita */
-    width: 70%; /* Ocupa 70% da tela */
-    height: 100vh;
-    background-color: #2b65ec;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
-    
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    
-    transition: right 0.4s ease-in-out; /* Animação de deslizar */
-    padding-top: 60px;
-  }
-
-  /* Classe que o JavaScript vai adicionar para abrir o menu */
-  .menu.active {
-    right: 0; /* Traz o menu para a tela */
-  }
-  
-  /* Aumenta os links no celular para facilitar o toque */
-  .menu a {
-    font-size: 1.5rem;
-  }
+  .product-item.prev { left: 10%; }
+  .product-item.next { left: 90%; }
 }
