@@ -5,9 +5,9 @@
 @font-face {
   font-family: 'futura-extrabold';
   /* Prioridade 1: Tenta carregar a versão moderna (WOFF2) */
-  src: url('fonts/futura-extrabold.woff2') format('woff2'),
+  src: url('fonts/futura-extrabold.ttf') format('truetype') ,
        /* Prioridade 2: Tenta a versão antiga como garantia (TTF) */
-       url('fonts/futura-extrabold.ttf') format('truetype');
+       url('fonts/futura-extrabold.woff2') format('woff2');
   font-weight: 800;
   font-style: normal;
   font-display: swap; /* Garante que o texto aparece mesmo se a fonte demorar */
