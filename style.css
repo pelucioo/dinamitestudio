@@ -84,7 +84,7 @@ a {
 }
 
 .header-logo img {
-  height: 80px; /* Tamanho da logo no Desktop */
+  height: 120px; /* Tamanho da logo no Desktop */
   width: auto;
   display: block;
   transition: height 0.3s;
@@ -400,7 +400,7 @@ footer {
 
   /* --- 9.2 HEADER FIXO E FINO --- */
   .header {
-    height: 70px !important;
+    height: 90px !important;
     padding: 0 !important;
     display: flex;
     align-items: center;
@@ -415,7 +415,7 @@ footer {
   }
 
   .header-logo img {
-    height: 40px !important; /* Logo menor no celular */
+    height: 60px !important; /* Logo menor no celular */
     width: auto !important;
   }
   
