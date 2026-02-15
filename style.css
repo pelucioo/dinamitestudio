@@ -1,13 +1,14 @@
 /* ==========================================================================
-   1. FONTES (CORREÇÃO PARA MOBILE)
+   1. DECLARAÇÃO DE FONTES (CORRIGIDA)
    ========================================================================== */
 
 @font-face {
   font-family: 'futura-extrabold';
-  /* TRUQUE: Usamos o link COMPLETO para o celular não se perder nas pastas.
-     Se a fonte não carregar, verifique se o nome do arquivo no GitHub é 
-     exatamente 'Futura-ExtraBold.ttf' (Maiúsculas importam!) */
-  src: url('https://pelucioo.github.io/portfolio/fonts/Futura-ExtraBold.ttf') format('truetype');
+  /* IMPORTANTE: Estou usando o link direto do seu site. 
+     Se o nome do arquivo no GitHub for diferente (ex: futura.ttf ou Futura.ttf), 
+     você PRECISA mudar o nome aqui no final do link.
+  */
+  src: url('https://pelucioo.github.io/fonts/Futura-ExtraBold.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
 }
@@ -20,7 +21,7 @@
 }
 
 /* ==========================================================================
-   2. RESET E GERAL
+   2. RESET BÁSICO E CONFIGURAÇÕES GERAIS
    ========================================================================== */
 * {
   margin: 0;
@@ -37,7 +38,7 @@ body {
   line-height: 1.6;
   color: #333;
   background-color: #fff;
-  /* Espaço para o header fixo não cobrir o conteúdo */
+  /* Espaço no topo para o conteúdo não ficar escondido atrás do menu fixo */
   padding-top: 120px; 
 }
 
@@ -51,6 +52,7 @@ a {
   color: inherit;
 }
 
+/* Container padrão para centralizar o conteúdo */
 .container {
   width: 90%;
   max-width: 1200px;
@@ -66,7 +68,7 @@ a {
   color: #fff;
   padding: 10px 0;
   
-  /* Fixar no topo */
+  /* Fixar a barra no topo */
   position: fixed;
   top: 0;
   left: 0;
@@ -82,9 +84,10 @@ a {
 }
 
 .header-logo img {
-  height: 80px; /* Tamanho controlado no PC */
+  height: 80px; /* Tamanho da logo no Desktop */
   width: auto;
   display: block;
+  transition: height 0.3s;
 }
 
 .menu {
@@ -96,6 +99,7 @@ a {
   font-size: 1.1rem;
 }
 
+/* Ícones sociais dentro do menu (Desktop) */
 .socials-icons {
   display: flex;
   gap: 15px;
@@ -105,7 +109,7 @@ a {
 
 .socials-icons img {
   width: 24px;
-  filter: brightness(0) invert(1); /* Deixa branco */
+  filter: brightness(0) invert(1); /* Deixa os ícones brancos */
   transition: transform 0.2s;
 }
 
@@ -113,16 +117,14 @@ a {
   transform: scale(1.2);
 }
 
-/* Botão Mobile (Escondido no PC) */
+/* O Botão Mobile começa invisível no Desktop */
 .mobile-menu-btn {
   display: none;
 }
 
 /* ==========================================================================
-   4. SEÇÕES (HERO, GALERIA, SOBRE)
+   4. SEÇÃO HERO (CAPA)
    ========================================================================== */
-
-/* --- HERO --- */
 .hero {
   text-align: center;
   padding: 60px 0 40px;
@@ -142,14 +144,16 @@ a {
   color: #555;
 }
 
-/* --- GALERIA GRID --- */
+/* ==========================================================================
+   5. GALERIA (GRID)
+   ========================================================================== */
 .gallery {
   padding-bottom: 60px;
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 4 Colunas no PC */
   gap: 20px;
 }
 
@@ -165,7 +169,9 @@ a {
   transform: scale(1.02);
 }
 
-/* --- ABOUT --- */
+/* ==========================================================================
+   6. SEÇÃO ABOUT (SOBRE)
+   ========================================================================== */
 .about {
   padding: 80px 0;
 }
@@ -198,11 +204,11 @@ a {
 }
 
 /* ==========================================================================
-   5. CARROSSEL (PRODUCTS)
+   7. SEÇÃO PRODUCTS (CARROSSEL)
    ========================================================================== */
 .products {
   padding: 60px 0 100px;
-  overflow: hidden; /* Evita rolagem horizontal */
+  overflow: hidden; 
 }
 
 .products-subtitle {
@@ -221,6 +227,7 @@ a {
   justify-content: center;
 }
 
+/* Itens do Carrossel */
 .product-item {
   position: absolute;
   top: 50%;
@@ -230,7 +237,7 @@ a {
   transition: all 0.5s ease-in-out;
   opacity: 0;
   z-index: 0;
-  pointer-events: none;
+  pointer-events: none; /* Não clicável se invisível */
 }
 
 .product-item img {
@@ -239,7 +246,7 @@ a {
   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-/* Estados do Carrossel */
+/* Estado: Ativo (Centro) */
 .product-item.active {
   opacity: 1;
   z-index: 10;
@@ -247,6 +254,7 @@ a {
   pointer-events: auto;
 }
 
+/* Estado: Anterior (Esquerda) */
 .product-item.prev {
   opacity: 0.6;
   z-index: 5;
@@ -257,6 +265,7 @@ a {
   pointer-events: auto;
 }
 
+/* Estado: Próximo (Direita) */
 .product-item.next {
   opacity: 0.6;
   z-index: 5;
@@ -268,7 +277,7 @@ a {
 }
 
 /* ==========================================================================
-   6. CONTATO E FOOTER
+   8. CONTATO E FOOTER
    ========================================================================== */
 .contact {
   background: linear-gradient(180deg, #2b65ec 0%, #4a8eff 100%);
@@ -350,11 +359,11 @@ footer {
 
 
 /* ==========================================================================
-   7. MOBILE FINAL (A CORREÇÃO DOS BUGS)
+   9. VERSÃO MOBILE (CORREÇÕES FINAIS E CRÍTICAS)
    ========================================================================== */
 @media (max-width: 768px) {
 
-  /* --- 1. BOTÃO MOBILE (FIM DO TIJOLO BRANCO) --- */
+  /* --- 9.1 BOTÃO MENU (CORREÇÃO PARA SAFARI/IPHONE) --- */
   .mobile-menu-btn {
     display: flex !important;
     flex-direction: column;
@@ -362,13 +371,18 @@ footer {
     align-items: center;
     gap: 6px;
     
-    /* Trava o tamanho */
+    /* Tamanho travado */
     width: 45px !important; 
     height: 45px !important;
     
-    /* Remove fundo e bordas */
-    background: transparent !important; 
+    /* REMOVE ESTILO PADRÃO DA APPLE E FUNDO */
+    background: transparent !important;
+    background-color: transparent !important;
     border: none !important;
+    box-shadow: none !important;
+    -webkit-appearance: none !important; /* Essencial para iPhone */
+    appearance: none !important;
+    outline: none !important;
     
     cursor: pointer;
     z-index: 2002;
@@ -384,7 +398,7 @@ footer {
     flex-shrink: 0;
   }
 
-  /* --- 2. HEADER FIXO FINO --- */
+  /* --- 9.2 HEADER FIXO E FINO --- */
   .header {
     height: 70px !important;
     padding: 0 !important;
@@ -395,32 +409,32 @@ footer {
   .header-container {
     width: 90% !important;
     display: flex !important;
-    justify-content: space-between !important; /* Logo na esq, Botão na dir */
+    justify-content: space-between !important; 
     align-items: center !important;
-    flex-direction: row !important; /* Garante linha, não coluna */
+    flex-direction: row !important; /* Mantém linha: Logo esq / Botão dir */
   }
 
   .header-logo img {
-    height: 40px !important; /* Logo pequena no cel */
+    height: 40px !important; /* Logo menor no celular */
     width: auto !important;
   }
   
-  /* Ajuste para o conteúdo não ficar escondido atrás do menu */
   body {
-    padding-top: 80px; 
+    padding-top: 80px; /* Ajuste para compensar a barra fixa */
   }
 
-  /* --- 3. MENU OVERLAY (ARRUMADO O VAZAMENTO) --- */
+  /* --- 9.3 MENU SOBREPOSTO (OVERLAY) --- */
   .menu {
     position: fixed !important;
     top: 0;
-    right: -100% !important; /* Escondido */
+    right: -100% !important; /* Esconde fora da tela à direita */
     width: 80% !important;
     height: 100vh !important;
+    
     background-color: #2b65ec !important;
     box-shadow: -5px 0 15px rgba(0,0,0,0.3);
     
-    flex-direction: column !important;
+    flex-direction: column !important; /* Links um embaixo do outro */
     align-items: center;
     justify-content: center;
     gap: 30px;
@@ -429,8 +443,9 @@ footer {
     z-index: 2000;
   }
 
+  /* Quando o Javascript adiciona a classe .active, o menu entra */
   .menu.active {
-    right: 0 !important; /* Aparece */
+    right: 0 !important;
   }
 
   .menu a {
@@ -438,42 +453,37 @@ footer {
     color: #fff;
   }
   
+  /* Centraliza ícones sociais no menu mobile */
   .socials-icons {
     margin-left: 0;
     justify-content: center;
   }
 
-  /* --- 4. LAYOUT GERAL MOBILE --- */
-  .hero h1 {
-    font-size: 2rem;
-  }
+  /* --- 9.4 AJUSTES DE LAYOUT GERAL --- */
+  .hero h1 { font-size: 2rem; }
 
+  /* Galeria em 2 colunas */
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px;
   }
 
+  /* Empilhar seções (Sobre e Contato) */
   .about-content, .contact-wrapper {
     flex-direction: column;
   }
-
-  .about-illustration img {
-    max-width: 100%;
-  }
-
+  
+  .about-illustration img { max-width: 100%; }
+  
   .contact-left, .contact-form-area {
     width: 100%;
   }
-
-  /* Ajuste Carrossel Mobile */
-  .carousel-wrapper {
-    height: 350px;
-  }
   
-  .product-item {
-    width: 220px;
-  }
+  /* Ajuste do Carrossel para tela pequena */
+  .carousel-wrapper { height: 350px; }
+  .product-item { width: 220px; }
   
+  /* Aproxima os itens laterais do carrossel */
   .product-item.prev { left: 10%; }
   .product-item.next { left: 90%; }
 }
