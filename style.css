@@ -4,13 +4,13 @@
 
 @font-face {
   font-family: 'futura-extrabold';
-  /* IMPORTANTE: Estou usando o link direto do seu site. 
-     Se o nome do arquivo no GitHub for diferente (ex: futura.ttf ou Futura.ttf), 
-     você PRECISA mudar o nome aqui no final do link.
-  */
-  src: url('https://pelucioo.github.io/fonts/Futura-ExtraBold.ttf') format('truetype');
+  /* Prioridade 1: Tenta carregar a versão moderna (WOFF2) */
+  src: url('fonts/Futura-ExtraBold.woff2') format('woff2'),
+       /* Prioridade 2: Tenta a versão antiga como garantia (TTF) */
+       url('fonts/Futura-ExtraBold.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
+  font-display: swap; /* Garante que o texto aparece mesmo se a fonte demorar */
 }
 
 @font-face {
