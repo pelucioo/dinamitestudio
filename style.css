@@ -4,13 +4,11 @@
 
 @font-face {
   font-family: 'futura-extrabold';
-  /* Prioridade 1: Tenta carregar a versão moderna (WOFF2) */
-  src: url('fonts/futura-extrabold.ttf') format('truetype') ,
-       /* Prioridade 2: Tenta a versão antiga como garantia (TTF) */
-       url('fonts/futura-extrabold.woff2') format('woff2');
+  src: url('fonts/futura-extrabold.woff2') format('woff2'),
+       url('fonts/futura-extrabold.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
-  font-display: swap; /* Garante que o texto aparece mesmo se a fonte demorar */
+  font-display: swap;
 }
 
 @font-face {
@@ -18,6 +16,7 @@
   src: url('fonts/AnonymousPro-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 /* ==========================================================================
@@ -32,16 +31,17 @@
 html {
   scroll-behavior: smooth;
 }
-h1 {
- font-family: 'futura-extrabold';
-}
+
 body {
   font-family: 'Anonymous Pro', monospace;
   line-height: 1.6;
   color: #333;
   background-color: #fff;
-  /* Espaço no topo para o conteúdo não ficar escondido atrás do menu fixo */
   padding-top: 120px; 
+}
+
+h1, .section-title, .contact-title, .menu, label, button {
+  font-family: 'futura-extrabold', sans-serif;
 }
 
 img {
@@ -54,7 +54,6 @@ a {
   color: inherit;
 }
 
-/* Container padrão para centralizar o conteúdo */
 .container {
   width: 90%;
   max-width: 1200px;
@@ -69,8 +68,6 @@ a {
   background-color: #2b65ec;
   color: #fff;
   padding: 10px 0;
-  
-  /* Fixar a barra no topo */
   position: fixed;
   top: 0;
   left: 0;
@@ -86,7 +83,7 @@ a {
 }
 
 .header-logo img {
-  height: 120px; /* Tamanho da logo no Desktop */
+  height: 120px;
   width: auto;
   display: block;
   transition: height 0.3s;
@@ -96,12 +93,10 @@ a {
   display: flex;
   align-items: center;
   gap: 30px;
-  font-family: 'futura-extrabold';
   text-transform: uppercase;
   font-size: 1.1rem;
 }
 
-/* Ícones sociais dentro do menu (Desktop) */
 .socials-icons {
   display: flex;
   gap: 15px;
@@ -111,7 +106,7 @@ a {
 
 .socials-icons img {
   width: 24px;
-  filter: brightness(0) invert(1); /* Deixa os ícones brancos */
+  filter: brightness(0) invert(1);
   transition: transform 0.2s;
 }
 
@@ -119,7 +114,6 @@ a {
   transform: scale(1.2);
 }
 
-/* O Botão Mobile começa invisível no Desktop */
 .mobile-menu-btn {
   display: none;
 }
@@ -133,7 +127,6 @@ a {
 }
 
 .hero h1 {
-  font-family: 'futura-extrabold';
   font-size: 3rem;
   color: #2b65ec;
   margin-bottom: 10px;
@@ -155,7 +148,7 @@ a {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 Colunas no PC */
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
@@ -179,7 +172,6 @@ a {
 }
 
 .section-title {
-  font-family: 'futura-extrabold';
   font-size: 2.5rem;
   color: #2b65ec;
   margin-bottom: 40px;
@@ -229,7 +221,6 @@ a {
   justify-content: center;
 }
 
-/* Itens do Carrossel */
 .product-item {
   position: absolute;
   top: 50%;
@@ -239,7 +230,7 @@ a {
   transition: all 0.5s ease-in-out;
   opacity: 0;
   z-index: 0;
-  pointer-events: none; /* Não clicável se invisível */
+  pointer-events: none;
 }
 
 .product-item img {
@@ -248,7 +239,6 @@ a {
   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-/* Estado: Ativo (Centro) */
 .product-item.active {
   opacity: 1;
   z-index: 10;
@@ -256,7 +246,6 @@ a {
   pointer-events: auto;
 }
 
-/* Estado: Anterior (Esquerda) */
 .product-item.prev {
   opacity: 0.6;
   z-index: 5;
@@ -267,7 +256,6 @@ a {
   pointer-events: auto;
 }
 
-/* Estado: Próximo (Direita) */
 .product-item.next {
   opacity: 0.6;
   z-index: 5;
@@ -298,13 +286,11 @@ a {
 }
 
 .contact-title {
-  font-family: 'futura-extrabold';
   font-size: 3rem;
   margin-bottom: 20px;
   text-transform: uppercase;
 }
 
-/* Formulário */
 form {
   display: flex;
   flex-direction: column;
@@ -315,7 +301,6 @@ form {
 label {
   font-weight: bold;
   color: #000;
-  font-family: 'futura-extrabold' ;
 }
 
 input, textarea {
@@ -331,14 +316,12 @@ button {
   border: 2px solid #000;
   padding: 10px 40px;
   border-radius: 20px;
-  font-family: 'futura-extrabold';
   font-size: 1rem;
   cursor: pointer;
   margin-top: 10px;
   text-transform: uppercase;
 }
 
-/* Ícones Sociais Grandes (Rodapé) */
 .contact-socials-big {
   display: flex;
   gap: 25px;
@@ -359,36 +342,26 @@ footer {
   padding: 20px;
 }
 
-
 /* ==========================================================================
-   9. VERSÃO MOBILE (CORREÇÕES FINAIS E CRÍTICAS)
+   9. VERSÃO MOBILE
    ========================================================================== */
 @media (max-width: 768px) {
 
-  /* --- 9.1 BOTÃO MENU (CORREÇÃO PARA SAFARI/IPHONE) --- */
   .mobile-menu-btn {
     display: flex !important;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 6px;
-    
-    /* Tamanho travado */
     width: 45px !important; 
     height: 45px !important;
-    
-    /* REMOVE ESTILO PADRÃO DA APPLE E FUNDO */
     background: transparent !important;
-    background-color: transparent !important;
     border: none !important;
-    box-shadow: none !important;
-    -webkit-appearance: none !important; /* Essencial para iPhone */
+    -webkit-appearance: none !important;
     appearance: none !important;
     outline: none !important;
-    
     cursor: pointer;
     z-index: 2002;
-    -webkit-tap-highlight-color: transparent;
   }
   
   .mobile-menu-btn span {
@@ -397,12 +370,10 @@ footer {
     height: 3px !important;
     background-color: #fff !important;
     border-radius: 2px;
-    flex-shrink: 0;
   }
 
-  /* --- 9.2 HEADER FIXO E FINO --- */
   .header {
-    height: 90px !important;
+    height: 80px !important;
     padding: 0 !important;
     display: flex;
     align-items: center;
@@ -413,39 +384,34 @@ footer {
     display: flex !important;
     justify-content: space-between !important; 
     align-items: center !important;
-    flex-direction: row !important; /* Mantém linha: Logo esq / Botão dir */
+    flex-direction: row !important;
   }
 
   .header-logo img {
-    height: 60px !important; /* Logo menor no celular */
+    height: 50px !important;
     width: auto !important;
   }
   
   body {
-    padding-top: 80px; /* Ajuste para compensar a barra fixa */
+    padding-top: 80px;
   }
 
-  /* --- 9.3 MENU SOBREPOSTO (OVERLAY) --- */
   .menu {
     position: fixed !important;
     top: 0;
-    right: -100% !important; /* Esconde fora da tela à direita */
+    right: -100% !important;
     width: 80% !important;
     height: 100vh !important;
-    
     background-color: #2b65ec !important;
     box-shadow: -5px 0 15px rgba(0,0,0,0.3);
-    
-    flex-direction: column !important; /* Links um embaixo do outro */
+    flex-direction: column !important;
     align-items: center;
     justify-content: center;
     gap: 30px;
-    
     transition: right 0.3s ease-in-out;
     z-index: 2000;
   }
 
-  /* Quando o Javascript adiciona a classe .active, o menu entra */
   .menu.active {
     right: 0 !important;
   }
@@ -455,37 +421,28 @@ footer {
     color: #fff;
   }
   
-  /* Centraliza ícones sociais no menu mobile */
   .socials-icons {
     margin-left: 0;
     justify-content: center;
   }
 
-  /* --- 9.4 AJUSTES DE LAYOUT GERAL --- */
   .hero h1 { font-size: 2rem; }
 
-  /* Galeria em 2 colunas */
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px;
   }
 
-  /* Empilhar seções (Sobre e Contato) */
   .about-content, .contact-wrapper {
     flex-direction: column;
   }
-  
-  .about-illustration img { max-width: 100%; }
   
   .contact-left, .contact-form-area {
     width: 100%;
   }
   
-  /* Ajuste do Carrossel para tela pequena */
   .carousel-wrapper { height: 350px; }
   .product-item { width: 220px; }
-  
-  /* Aproxima os itens laterais do carrossel */
   .product-item.prev { left: 10%; }
   .product-item.next { left: 90%; }
 }
