@@ -1,15 +1,18 @@
 /* ==========================================================================
-   1. DECLARAÇÃO DE FONTES (CORRIGIDA)
+   1. DECLARAÇÃO DE FONTES
    ========================================================================== */
 
+/* Fonte de Títulos (Eagle Bold) */
 @font-face {
-  font-family: 'eagle-bold.ttf';
-  src:url('fonts/eagle-bold.ttf') format('truetype');
+  font-family: 'eagle-bold';
+  /* Certifique-se que o arquivo eagle-bold.ttf está na pasta fonts */
+  src: url('fonts/eagle-bold.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
 
+/* Fonte de Texto (Anonymous Pro) */
 @font-face {
   font-family: 'Anonymous Pro';
   src: url('fonts/AnonymousPro-Regular.ttf') format('truetype');
@@ -19,7 +22,7 @@
 }
 
 /* ==========================================================================
-   2. RESET BÁSICO E CONFIGURAÇÕES GERAIS
+   2. RESET E GERAL
    ========================================================================== */
 * {
   margin: 0;
@@ -36,11 +39,8 @@ body {
   line-height: 1.6;
   color: #333;
   background-color: #fff;
+  /* Espaço para o header fixo */
   padding-top: 120px; 
-}
-
-h1, .section-title, .contact-title, .menu, label, button {
-  font-family: 'eagle-bold.ttf', sans-serif;
 }
 
 img {
@@ -53,6 +53,17 @@ a {
   color: inherit;
 }
 
+/* Aplica a fonte Eagle Bold em títulos, menu e botões */
+h1, 
+.section-title, 
+.contact-title, 
+.menu, 
+label, 
+button,
+#lang-btn {
+  font-family: 'eagle-bold', sans-serif;
+}
+
 .container {
   width: 90%;
   max-width: 1200px;
@@ -61,7 +72,7 @@ a {
 }
 
 /* ==========================================================================
-   3. HEADER (VERSÃO DESKTOP)
+   3. HEADER (DESKTOP)
    ========================================================================== */
 .header {
   background-color: #2b65ec;
@@ -82,7 +93,7 @@ a {
 }
 
 .header-logo img {
-  height: 120px;
+  height: 120px; /* Tamanho Desktop */
   width: auto;
   display: block;
   transition: height 0.3s;
@@ -118,7 +129,7 @@ a {
 }
 
 /* ==========================================================================
-   4. SEÇÃO HERO (CAPA)
+   4. SEÇÕES
    ========================================================================== */
 .hero {
   text-align: center;
@@ -138,9 +149,7 @@ a {
   color: #555;
 }
 
-/* ==========================================================================
-   5. GALERIA (GRID)
-   ========================================================================== */
+/* GALERIA */
 .gallery {
   padding-bottom: 60px;
 }
@@ -163,9 +172,7 @@ a {
   transform: scale(1.02);
 }
 
-/* ==========================================================================
-   6. SEÇÃO ABOUT (SOBRE)
-   ========================================================================== */
+/* ABOUT */
 .about {
   padding: 80px 0;
 }
@@ -197,7 +204,7 @@ a {
 }
 
 /* ==========================================================================
-   7. SEÇÃO PRODUCTS (CARROSSEL)
+   5. CARROSSEL (PRODUCTS)
    ========================================================================== */
 .products {
   padding: 60px 0 100px;
@@ -266,7 +273,7 @@ a {
 }
 
 /* ==========================================================================
-   8. CONTATO E FOOTER
+   6. CONTATO E FOOTER
    ========================================================================== */
 .contact {
   background: linear-gradient(180deg, #2b65ec 0%, #4a8eff 100%);
@@ -342,10 +349,40 @@ footer {
 }
 
 /* ==========================================================================
-   9. VERSÃO MOBILE
+   7. BOTÃO DE TRADUÇÃO (FLUTUANTE)
+   ========================================================================== */
+#lang-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+  
+  background-color: #2b65ec;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s, background 0.2s;
+}
+
+#lang-btn:hover {
+  transform: scale(1.1);
+  background-color: #fff;
+  color: #2b65ec;
+  border-color: #2b65ec;
+}
+
+/* ==========================================================================
+   8. VERSÃO MOBILE (RESPONSIVIDADE COMPLETA)
    ========================================================================== */
 @media (max-width: 768px) {
 
+  /* Botão Menu Hambúrguer (Ajuste p/ iPhone) */
   .mobile-menu-btn {
     display: flex !important;
     flex-direction: column;
@@ -354,13 +391,18 @@ footer {
     gap: 6px;
     width: 45px !important; 
     height: 45px !important;
+    
     background: transparent !important;
+    background-color: transparent !important;
     border: none !important;
-    -webkit-appearance: none !important;
+    box-shadow: none !important;
+    -webkit-appearance: none !important; /* Essencial para iPhone */
     appearance: none !important;
     outline: none !important;
+    
     cursor: pointer;
     z-index: 2002;
+    -webkit-tap-highlight-color: transparent;
   }
   
   .mobile-menu-btn span {
@@ -369,8 +411,10 @@ footer {
     height: 3px !important;
     background-color: #fff !important;
     border-radius: 2px;
+    flex-shrink: 0;
   }
 
+  /* Header Fixo */
   .header {
     height: 80px !important;
     padding: 0 !important;
@@ -387,7 +431,7 @@ footer {
   }
 
   .header-logo img {
-    height: 100px !important;
+    height: 100px !important; /* Logo Grande no Mobile */
     width: auto !important;
   }
   
@@ -395,6 +439,7 @@ footer {
     padding-top: 80px;
   }
 
+  /* Menu Overlay */
   .menu {
     position: fixed !important;
     top: 0;
@@ -403,10 +448,12 @@ footer {
     height: 100vh !important;
     background-color: #2b65ec !important;
     box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+    
     flex-direction: column !important;
     align-items: center;
     justify-content: center;
     gap: 30px;
+    
     transition: right 0.3s ease-in-out;
     z-index: 2000;
   }
@@ -425,6 +472,7 @@ footer {
     justify-content: center;
   }
 
+  /* Ajustes de Layout */
   .hero h1 { font-size: 2rem; }
 
   .gallery-grid {
@@ -440,6 +488,15 @@ footer {
     width: 100%;
   }
   
+  /* Ajuste do Botão de Tradução no Mobile */
+  #lang-btn {
+    bottom: 15px;
+    left: 15px;
+    padding: 8px 15px;
+    font-size: 0.8rem;
+  }
+  
+  /* Carrossel */
   .carousel-wrapper { height: 350px; }
   .product-item { width: 220px; }
   .product-item.prev { left: 10%; }

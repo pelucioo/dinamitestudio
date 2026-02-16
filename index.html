@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
+<html lang="en"> <head>
   <link rel="icon" href="images/logo.png" type="image/png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pelúcio — Portfólio</title>
-  <link rel="stylesheet" href="style.css">
+  
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
-<!-- oi -->
-<header class="header">
+
+  <header class="header">
     <div class="container header-container">
       <div class="header-logo">
         <a href="#home">
@@ -24,9 +24,10 @@
       </button>
 
       <nav class="menu">
-        <a href="#work">Gallery</a>
-        <a href="#about">Who</a>
-        <a href="#contact">Contact</a>
+        <a href="#work" data-translate="menu_gallery">Gallery</a>
+        <a href="#about" data-translate="menu_who">Who</a>
+        <a href="#contact" data-translate="menu_contact">Contact</a>
+        
         <div class="socials-icons">
             <a href="https://x.com/dinamitestudioo" target="_blank"><img src="images/icon-twitter.png" alt="TW"></a>
             <a href="https://www.behance.net/pelucio" target="_blank"><img src="images/icon-behance.png" alt="BE"></a>
@@ -39,8 +40,8 @@
   <main>
     <section class="hero" id="home">
       <div class="container">
-        <h1>Resenha é Coisa Séria!!</h1>
-        <p class="subtitle">Cartoon illustration and design inspired by 80s and 90s aesthetics</p>
+        <h1 data-translate="hero_title">DESIGNER & CREATIVE</h1>
+        <p class="subtitle" data-translate="hero_subtitle">Cartoon illustration and design inspired by 80s and 90s aesthetics</p>
       </div>
     </section>
 
@@ -63,7 +64,7 @@
 
     <section class="about" id="about">
       <div class="container">
-        <h2 class="section-title">Hi, I’m Pedro!</h2>
+        <h2 class="section-title" data-translate="about_title">Hi, I’m Pedro!</h2>
 
         <div class="about-content">
           <div class="about-illustration">
@@ -71,16 +72,16 @@
           </div>
 
           <div class="about-text">
-            <p>
+            <p data-translate="about_p1">
               Also known as Pelucio, a freelancer and illustrator from Brazil. My art is
               heavily influenced by the vibrant cartoon styles of the 80s and 90s.
               Nostalgic and contemporary elements are part of my work.
             </p>
-            <p>
+            <p data-translate="about_p2">
               Ever since I was little, art has been my jam. The magic of bringing life
               to inanimate stuff making everything look way cooler has always fascinated me.
             </p>
-            <p>
+            <p data-translate="about_p3">
               So, at some point, making art started to be something I've been working on.
               Digital art, creating brand logos for clothes and stuff like that along my journey
               till now, but always craving for seeking out new opportunities to share my art to the world.
@@ -92,8 +93,8 @@
 
     <section class="products" id="products">
       <div class="container">
-        <h2 class="section-title center-title">Products and Design</h2>
-        <p class="products-subtitle">Check out some designs. Click on side images to navigate.</p>
+        <h2 class="section-title center-title" data-translate="products_title">Products and Design</h2>
+        <p class="products-subtitle" data-translate="products_subtitle">Check out some designs. Click on side images to navigate.</p>
 
         <div class="carousel-wrapper">
           <div class="products-carousel">
@@ -113,80 +114,152 @@
       <div class="container contact-wrapper">
         
         <div class="contact-left">
-            <h2 class="contact-title">LET’S TALK?</h2>
-            <p class="contact-text">
+            <h2 class="contact-title" data-translate="contact_title">LET’S TALK?</h2>
+            <p class="contact-text" data-translate="contact_text">
             I'm always excited to chat to talk about what I love doing.
             If you just want to know the new things I've on or support my work,
             follow me on my social medias.
             </p>
             <div class="contact-socials-big">
-                <a href="https://x.com/dinamitestudioo" target="_blank">
-                    <img src="images/icon-twitter.png" alt="Twitter">
-                </a>
-                
-                <a href="https://behance.net/pelucio" target="_blank">
-                    <img src="images/icon-behance.png" alt="Behance">
-                </a>
-                
-                <a href="https://instagram.com/dinamite.studio" target="_blank">
-                    <img src="images/icon-insta.png" alt="Instagram">
-                </a>
+                <a href="https://x.com/dinamitestudioo" target="_blank"><img src="images/icon-twitter.png" alt="Twitter"></a>
+                <a href="https://behance.net/pelucio" target="_blank"><img src="images/icon-behance.png" alt="Behance"></a>
+                <a href="https://instagram.com/dinamite.studio" target="_blank"><img src="images/icon-insta.png" alt="Instagram"></a>
             </div>
         </div>
 
         <div class="contact-form-area">
             <div class="form-header">
-                <h3>Contact</h3>
-                <p>Fill the fields here to send an easy message to <a href="mailto:dinamite.studioo@gmail.com">dinamite.studioo@gmail.com</a></p>
+                <h3 data-translate="form_header_title">Contact</h3>
+                <p data-translate="form_header_text">Fill the fields here to send an easy message to <a href="mailto:dinamite.studioo@gmail.com">dinamite.studioo@gmail.com</a></p>
             </div>
-            <form id="contact-form">
-    <input type="hidden" name="_subject" value="Novo contato do Portfólio!">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
-
-    <label for="name">Name *</label>
-    <input type="text" id="name" name="name" required>
-    
-    <label for="email">Email *</label>
-    <input type="email" id="email" name="email" required>
-    
-    <label for="message">Message *</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
-    
-    <button type="submit">ENVIAR</button>
-</form>
             
-<input type="hidden" name="_next" value="...">
+            <form id="contact-form">
+                <input type="hidden" name="_subject" value="Novo contato do Portfólio!">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
+                <label for="name" data-translate="form_name">Name *</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email" data-translate="form_email">Email *</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message" data-translate="form_message">Message *</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit" data-translate="form_btn">SEND MESSAGE</button>
+            </form>
+            
+            <input type="hidden" name="_next" value="...">
         </div>
 
       </div>
     </section>
-
   </main>
 
   <footer>
     <p>© 2026 Pelúcio</p>
   </footer>
-<script>
+
+  <button id="lang-btn" onclick="toggleLanguage()">
+    🌐 PT
+  </button>
+  
+  <script>
+    // Dicionário com todos os textos
+    const translations = {
+      "en": {
+        "menu_gallery": "GALLERY",
+        "menu_who": "WHO",
+        "menu_contact": "CONTACT",
+        
+        "hero_title": "DESIGNER & CREATIVE",
+        "hero_subtitle": "Cartoon illustration and design inspired by 80s and 90s aesthetics",
+        
+        "about_title": "Hi, I’m Pedro!",
+        "about_p1": "Also known as Pelucio, a freelancer and illustrator from Brazil. My art is heavily influenced by the vibrant cartoon styles of the 80s and 90s. Nostalgic and contemporary elements are part of my work.",
+        "about_p2": "Ever since I was little, art has been my jam. The magic of bringing life to inanimate stuff making everything look way cooler has always fascinated me.",
+        "about_p3": "So, at some point, making art started to be something I've been working on. Digital art, creating brand logos for clothes and stuff like that along my journey till now, but always craving for seeking out new opportunities to share my art to the world.",
+        
+        "products_title": "Products and Design",
+        "products_subtitle": "Check out some designs. Click on side images to navigate.",
+        
+        "contact_title": "LET’S TALK?",
+        "contact_text": "I'm always excited to chat to talk about what I love doing. If you just want to know the new things I've on or support my work, follow me on my social medias.",
+        
+        "form_header_title": "Contact",
+        "form_header_text": "Fill the fields here to send an easy message to <a href='mailto:dinamite.studioo@gmail.com'>dinamite.studioo@gmail.com</a>",
+        "form_name": "Name *",
+        "form_email": "Email *",
+        "form_message": "Message *",
+        "form_btn": "SEND MESSAGE"
+      },
+      "pt": {
+        "menu_gallery": "GALERIA",
+        "menu_who": "QUEM SOU",
+        "menu_contact": "CONTATO",
+        
+        "hero_title": "RESENHA É COISA SÉRIA!!",
+        "hero_subtitle": "Ilustração cartoon e design inspirados na estética dos anos 80 e 90",
+        
+        "about_title": "Oi, eu sou o Pedro!",
+        "about_p1": "Também conhecido como Pelúcio, sou freelancer e ilustrador do Brasil. Minha arte é fortemente influenciada pelos estilos vibrantes de cartoon dos anos 80 e 90. Elementos nostálgicos e contemporâneos fazem parte do meu trabalho.",
+        "about_p2": "Desde pequeno, arte tem sido minha praia. A magia de dar vida a coisas inanimadas, fazendo tudo parecer muito mais legal, sempre me fascinou.",
+        "about_p3": "Então, em algum momento, fazer arte começou a ser algo em que tenho trabalhado. Arte digital, criando logotipos para marcas de roupas e coisas do tipo ao longo da minha jornada até agora, mas sempre buscando novas oportunidades para compartilhar minha arte com o mundo.",
+        
+        "products_title": "Produtos e Design",
+        "products_subtitle": "Confira alguns designs. Clique nas imagens laterais para navegar.",
+        
+        "contact_title": "VAMOS CONVERSAR?",
+        "contact_text": "Estou sempre animado para conversar sobre o que amo fazer. Se você quer apenas saber as novidades ou apoiar meu trabalho, me siga nas redes sociais.",
+        
+        "form_header_title": "Contato",
+        "form_header_text": "Preencha os campos abaixo para enviar uma mensagem para <a href='mailto:dinamite.studioo@gmail.com'>dinamite.studioo@gmail.com</a>",
+        "form_name": "Nome *",
+        "form_email": "E-mail *",
+        "form_message": "Mensagem *",
+        "form_btn": "ENVIAR MENSAGEM"
+      }
+    };
+
+    // Lógica para Trocar o Idioma
+    let currentLang = "en"; // Começa em Inglês
+
+    function toggleLanguage() {
+      // 1. Inverte o idioma
+      currentLang = currentLang === "en" ? "pt" : "en";
+
+      // 2. Muda o texto do botão
+      const btn = document.getElementById("lang-btn");
+      btn.innerHTML = currentLang === "en" ? "🌐 PT" : "🌐 EN";
+
+      // 3. Atualiza os textos na tela
+      const elements = document.querySelectorAll("[data-translate]");
+      
+      elements.forEach((element) => {
+        const key = element.getAttribute("data-translate");
+        if (translations[currentLang][key]) {
+          element.innerHTML = translations[currentLang][key]; // innerHTML permite links dentro do texto
+        }
+      });
+    }
+  </script>
+
+
+  <script>
     const items = document.querySelectorAll('.product-item');
     const totalItems = items.length;
-    let activeIndex = 0; // Começa pelo primeiro
+    let activeIndex = 0; 
     let autoPlayInterval;
 
     function updateCarousel() {
-      // 1. Limpa todas as classes de todos os itens
       items.forEach(item => {
         item.classList.remove('active', 'prev', 'next');
       });
 
-      // 2. Calcula os índices (Matemática para o Loop Infinito)
-      // Se activeIndex for 0, o anterior é o último da lista
       const prevIndex = (activeIndex - 1 + totalItems) % totalItems;
-      
-      // Se activeIndex for o último, o próximo é o 0
       const nextIndex = (activeIndex + 1) % totalItems;
 
-      // 3. Adiciona as classes nos itens corretos
       items[activeIndex].classList.add('active');
       items[prevIndex].classList.add('prev');
       items[nextIndex].classList.add('next');
@@ -196,7 +269,7 @@
       clearInterval(autoPlayInterval);
       autoPlayInterval = setInterval(() => {
         moveNext();
-      }, 10000); // 10 segundos
+      }, 10000); 
     }
 
     function moveNext() {
@@ -209,50 +282,44 @@
       updateCarousel();
     }
 
-    // Configura os cliques
     items.forEach((item, index) => {
       item.addEventListener('click', () => {
-        // Se clicar no item da Esquerda (Prev)
         if (item.classList.contains('prev')) {
           movePrev();
-          startAutoPlay(); // Reinicia o contador
+          startAutoPlay();
         }
-        // Se clicar no item da Direita (Next)
         else if (item.classList.contains('next')) {
           moveNext();
-          startAutoPlay(); // Reinicia o contador
+          startAutoPlay();
         }
       });
     });
 
-    // Inicia
     updateCarousel();
     startAutoPlay();
   </script>
+
   <script>
     const form = document.getElementById("contact-form");
 
     form.addEventListener("submit", function(e) {
-        e.preventDefault(); // 1. Impede a página de recarregar
+        e.preventDefault();
         
         const formData = new FormData(form);
         const button = form.querySelector("button");
         const originalText = button.innerText;
 
-        // Muda o texto do botão para indicar que está carregando
         button.innerText = "ENVIANDO...";
 
-        // 2. Envia para o FormSubmit usando o modo AJAX
         fetch("https://formsubmit.co/ajax/dinamite.studioo@gmail.com", {
             method: "POST",
             body: formData
         })
         .then(response => response.json())
         .then(data => {
-            // 3. SUCESSO: Limpa os campos
             form.reset();
-            alert("Mensagem enviada com sucesso!"); // Um aviso simples pra confirmar
-            button.innerText = originalText; // Volta o texto do botão
+            alert("Mensagem enviada com sucesso!");
+            button.innerText = originalText;
         })
         .catch(error => {
             console.error('Erro:', error);
@@ -261,25 +328,22 @@
         });
     });
   </script>
-  <script>
-    /* ... seus scripts do carrossel e form ficam aqui ... */
 
-    // SCRIPT DO MENU MOBILE
+  <script>
     const menuBtn = document.querySelector('.mobile-menu-btn');
     const menuNav = document.querySelector('.menu');
-    const menuLinks = document.querySelectorAll('.menu a'); // Pega os links
+    const menuLinks = document.querySelectorAll('.menu a');
 
-    // Abrir/Fechar ao clicar no botão
     menuBtn.addEventListener('click', () => {
       menuNav.classList.toggle('active');
     });
 
-    // Fechar o menu automaticamente quando clicar em um link (Gallery, Who, etc)
     menuLinks.forEach(link => {
       link.addEventListener('click', () => {
         menuNav.classList.remove('active');
       });
     });
   </script>
+
 </body>
 </html>
