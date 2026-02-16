@@ -32,7 +32,9 @@
 html {
   scroll-behavior: smooth;
 }
-
+h1 {
+ font-family: 'futura-extrabold';
+}
 body {
   font-family: 'Anonymous Pro', monospace;
   line-height: 1.6;
