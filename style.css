@@ -172,7 +172,7 @@ button,
   transform: scale(1.02);
 }
 
-/* ABOUT */
+/* ABOUT (ALTERADO AQUI) */
 .about {
   padding: 80px 0;
 }
@@ -187,14 +187,20 @@ button,
 
 .about-content {
   display: flex;
-  align-items: flex-start;
+  /* MUDANÇA 1: Alinha os itens (imagem e texto) ao centro verticalmente */
+  align-items: center; 
   gap: 50px;
 }
 
 .about-illustration {
   flex: 1;
-  border: 2px solid #333;
-  padding: 20px;
+  /* MUDANÇA 2: Removida a borda e o padding */
+  /* border: 2px solid #333;  <-- REMOVIDO */
+  /* padding: 20px;           <-- REMOVIDO */
+  
+  /* Opcional: garante que a imagem fique centralizada no espaço dela */
+  display: flex;
+  justify-content: center;
 }
 
 .about-text {
@@ -482,6 +488,8 @@ footer {
 
   .about-content, .contact-wrapper {
     flex-direction: column;
+    /* MUDANÇA MOBILE: Garante que fiquem centralizados quando empilhados */
+    align-items: center;
   }
   
   .contact-left, .contact-form-area {
