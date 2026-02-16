@@ -3,8 +3,8 @@
    ========================================================================== */
 
 @font-face {
-  font-family: 'futura-extrabold';
-  src:url('fonts/futura-extrabold.ttf') format('truetype');
+  font-family: 'eagle-bold.ttf';
+  src:url('fonts/eagle-bold.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -40,7 +40,7 @@ body {
 }
 
 h1, .section-title, .contact-title, .menu, label, button {
-  font-family: 'futura-extrabold', sans-serif;
+  font-family: 'eagle-bold.ttf', sans-serif;
 }
 
 img {
