@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en"> <head>
+<html lang="en">
+<head>
   <link rel="icon" href="images/logo.png" type="image/png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pelúcio — Portfólio</title>
   
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -73,18 +74,16 @@
 
           <div class="about-text">
             <p data-translate="about_p1">
-              Also known as Pelucio, a freelancer and illustrator from Brazil. My art is
-              heavily influenced by the vibrant cartoon styles of the 80s and 90s.
-              Nostalgic and contemporary elements are part of my work.
+              Also known as Pelucio, I am a freelance illustrator and designer from Brazil. My art is heavily influenced by 80s and 90s cartoons, with bold colors, expressive characters, and that exaggerated energy that defined that era.
             </p>
             <p data-translate="about_p2">
-              Ever since I was little, art has been my jam. The magic of bringing life
-              to inanimate stuff making everything look way cooler has always fascinated me.
+              Drawing has always been part of my life. From an early age, I enjoyed transforming simple ideas into something more interesting, stylish, and alive. Over time, this went from just fun to a profession.
             </p>
             <p data-translate="about_p3">
-              So, at some point, making art started to be something I've been working on.
-              Digital art, creating brand logos for clothes and stuff like that along my journey
-              till now, but always craving for seeking out new opportunities to share my art to the world.
+              Today I work mainly with digital art, creating visual identities and logos, especially for clothing brands and original projects. I like creating things that have a clear personality and truly represent who is behind the brand.
+            </p>
+            <p data-translate="about_p4">
+              I continue exploring new references and seeking projects that challenge me creatively and allow me to evolve my style.
             </p>
           </div>
         </div>
@@ -166,7 +165,6 @@
   </button>
   
   <script>
-    // Dicionário com todos os textos
     const translations = {
       "en": {
         "menu_gallery": "GALLERY",
@@ -177,9 +175,10 @@
         "hero_subtitle": "Cartoon illustration and design inspired by 80s and 90s aesthetics",
         
         "about_title": "Hi, I’m Pedro!",
-        "about_p1": "Also known as Pelucio, a freelancer and illustrator from Brazil. My art is heavily influenced by the vibrant cartoon styles of the 80s and 90s. Nostalgic and contemporary elements are part of my work.",
-        "about_p2": "Ever since I was little, art has been my jam. The magic of bringing life to inanimate stuff making everything look way cooler has always fascinated me.",
-        "about_p3": "So, at some point, making art started to be something I've been working on. Digital art, creating brand logos for clothes and stuff like that along my journey till now, but always craving for seeking out new opportunities to share my art to the world.",
+        "about_p1": "Also known as Pelucio, I am a freelance illustrator and designer from Brazil. My art is heavily influenced by 80s and 90s cartoons, with bold colors, expressive characters, and that exaggerated energy that defined that era.",
+        "about_p2": "Drawing has always been part of my life. From an early age, I enjoyed transforming simple ideas into something more interesting, stylish, and alive. Over time, this went from just fun to a profession.",
+        "about_p3": "Today I work mainly with digital art, creating visual identities and logos, especially for clothing brands and original projects. I like creating things that have a clear personality and truly represent who is behind the brand.",
+        "about_p4": "I continue exploring new references and seeking projects that challenge me creatively and allow me to evolve my style.",
         
         "products_title": "Products and Design",
         "products_subtitle": "Check out some designs. Click on side images to navigate.",
@@ -203,9 +202,10 @@
         "hero_subtitle": "Ilustração cartoon e design inspirados na estética dos anos 80 e 90",
         
         "about_title": "Oi, eu sou o Pedro!",
-        "about_p1": "Também conhecido como Pelúcio, sou freelancer e ilustrador do Brasil. Minha arte é fortemente influenciada pelos estilos vibrantes de cartoon dos anos 80 e 90. Elementos nostálgicos e contemporâneos fazem parte do meu trabalho.",
-        "about_p2": "Desde pequeno, arte tem sido minha praia. A magia de dar vida a coisas inanimadas, fazendo tudo parecer muito mais legal, sempre me fascinou.",
-        "about_p3": "Então, em algum momento, fazer arte começou a ser algo em que tenho trabalhado. Arte digital, criando logotipos para marcas de roupas e coisas do tipo ao longo da minha jornada até agora, mas sempre buscando novas oportunidades para compartilhar minha arte com o mundo.",
+        "about_p1": "Também conhecido como Pelúcio, sou ilustrador e designer freelancer do Brasil. Minha arte é muito influenciada pelos cartoons dos anos 80 e 90, com cores fortes, personagens expressivos e aquela energia exagerada que marcou essa época.",
+        "about_p2": "Desenhar sempre fez parte da minha vida. Desde cedo eu curtia transformar ideias simples em algo mais interessante, mais estiloso, mais vivo. Com o tempo, isso deixou de ser só diversão e virou profissão.",
+        "about_p3": "Hoje trabalho principalmente com arte digital, criação de identidades visuais e logotipos, especialmente para marcas de roupa e projetos autorais. Gosto de criar coisas que tenham personalidade clara e que realmente representem quem está por trás da marca.",
+        "about_p4": "Continuo explorando novas referências e buscando projetos que me desafiem criativamente e me permitam evoluir meu estilo.",
         
         "products_title": "Produtos e Design",
         "products_subtitle": "Confira alguns designs. Clique nas imagens laterais para navegar.",
@@ -222,29 +222,24 @@
       }
     };
 
-    // Lógica para Trocar o Idioma
-    let currentLang = "en"; // Começa em Inglês
+    let currentLang = "en"; 
 
     function toggleLanguage() {
-      // 1. Inverte o idioma
       currentLang = currentLang === "en" ? "pt" : "en";
 
-      // 2. Muda o texto do botão
       const btn = document.getElementById("lang-btn");
       btn.innerHTML = currentLang === "en" ? "🌐 PT" : "🌐 EN";
 
-      // 3. Atualiza os textos na tela
       const elements = document.querySelectorAll("[data-translate]");
       
       elements.forEach((element) => {
         const key = element.getAttribute("data-translate");
         if (translations[currentLang][key]) {
-          element.innerHTML = translations[currentLang][key]; // innerHTML permite links dentro do texto
+          element.innerHTML = translations[currentLang][key];
         }
       });
     }
   </script>
-
 
   <script>
     const items = document.querySelectorAll('.product-item');
