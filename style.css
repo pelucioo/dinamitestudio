@@ -4,8 +4,7 @@
 
 @font-face {
   font-family: 'futura-extrabold';
-  src: url('fonts/futura-extrabold.woff2') format('woff2'),
-       url('fonts/futura-extrabold.ttf') format('truetype');
+  src:url('fonts/futura-extrabold.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
   font-display: swap;
