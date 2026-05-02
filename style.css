@@ -493,3 +493,100 @@ button:hover {
     transform: scale(1.15); /* Aumenta levemente ao passar o mouse */
     opacity: 0.8; /* Dá uma leve transparência */
 }
+/* ==========================================================================
+   AJUSTES MOBILE - CORREÇÃO DE TÍTULO E MENU
+   ========================================================================== */
+@media (max-width: 768px) {
+    
+    .wrapper {
+        width: 92%; /* Um pouco mais de respiro nas bordas */
+    }
+
+/* 2. Topbar - Afinando a faixa preta e encolhendo os itens */
+    .topbar-inner {
+        font-size: 10px; /* Deixa o "BY PELUCIO" bem menor */
+        padding: 6px 0; /* Afina a barra reduzindo o espaço em cima e embaixo */
+    }
+
+    .topbar-inner .icons {
+        font-size: 15px; /* Reduz o tamanho dos ícones do Whats, Insta e Behance */
+        gap: 12px; /* Deixa os ícones um pouquinho mais próximos uns dos outros */
+    }
+
+    /* Opcional: Garante que a curvinha branca embaixo do preto continue visível */
+    .topbar::after {
+        height: 3vw; 
+        border-radius: 6vw 6vw 0 0; 
+    }
+    
+    /* 1. AJUSTE DO MENU (Apenas a Logo no Mobile) */
+    .nav-header {
+        justify-content: center; /* Garante que o que sobrar fique bem no meio */
+        padding: 40px 0 30px 0;
+    }
+
+    .nav-header a {
+        display: none; /* Mágica: esconde todos os links no celular! */
+    }
+
+    .nav-header img {
+        width: 80vw; /* Como a logo está sozinha, podemos dar mais destaque a ela */
+        max-width: 110px;
+        margin: 0;
+    }
+
+    /* 2. AJUSTE DO TÍTULO "RESENHA" */
+    .hero h1 {
+        /* Usamos vw para ele ocupar a tela toda sem quebrar linha errado */
+        font-size: 19vw; 
+        line-height: 0.7;
+        letter-spacing: -0.05em;
+        text-align: center;
+        margin-bottom: 9px;
+        white-space: nowrap; /* Impede que o título se divida em duas linhas */
+    }
+
+    /* 3. AJUSTE DO QUEM SOU EU */
+    .about h1 {
+        font-size: 11vw;
+        text-align: center;
+        white-space: nowrap; /* Aqui pode quebrar se necessário */
+    }
+
+    .about-grid {
+        grid-template-columns: 40fr;
+        text-align: center;
+    }
+
+    .about img {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .soft {
+        justify-content: center;
+    }
+
+    /* 4. AJUSTE DOS REVIEWS */
+    .projects h1::after {
+        font-size: 14vw;
+    }
+
+    /* 5. FOOTER MOBILE */
+    .footer {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer .left, .footer .right {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .footer .icons {
+        justify-content: center;
+    }
+
+    .footer h2 {
+        font-size: 32px;
+    }
+}
