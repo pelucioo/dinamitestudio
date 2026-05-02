@@ -1,344 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <link rel="icon" href="images/estudio dinamite só a dinamite.png" type="image/png">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pelúcio — Portfólio</title>
-  
-  <link rel="stylesheet" href="style.css?v=6">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinamite Studio</title>
+    
+    <link rel="icon" type="image/png" href="img/favicon.png?v=2">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <header class="header">
-    <div class="container header-container">
-      <div class="header-logo">
-        <a href="#home">
-           <img src="images/logo.png" alt="Pedro logo">
-        </a>
-      </div>
-
-      <button class="mobile-menu-btn" aria-label="Abrir Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="menu">
-        <a href="#work" data-translate="menu_gallery">Gallery</a>
-        <a href="#about" data-translate="menu_who">Who</a>
-        <a href="#contact" data-translate="menu_contact">Contact</a>
-        
-        <div class="socials-icons">
-            <a href="https://x.com/dinamitestudioo" target="_blank"><img src="images/icon-twitter.png" alt="TW"></a>
-            <a href="https://www.behance.net/pelucio" target="_blank"><img src="images/icon-behance.png" alt="BE"></a>
-            <a href="https://www.instagram.com/dinamite.studio/" target="_blank"><img src="images/icon-insta.png" alt="IG"></a>
+<header class="topbar">
+    <div class="topbar-inner">
+        <span>BY PELUCIO</span>
+        <div class="icons">
+            <a href="https://wa.me/5511963286510" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/dinamite.studio/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.behance.net/pelucio" target="_blank"><i class="fab fa-behance"></i></a>
         </div>
-      </nav>
     </div>
-  </header>
+</header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container">
-        <h1 data-translate="hero_title">DESIGNER & CREATIVE</h1>
-        <p class="subtitle" data-translate="hero_subtitle">Cartoon illustration and design inspired by 80s and 90s aesthetics</p>
-      </div>
-    </section>
+<main class="wrapper">
+    <nav class="nav-header">
+        <a href="#projetos">Projects</a>
+        <a href="#sobre">who am I</a>
+        <img src="img/logo.png" alt="Dinamite Studio">
+        <a href="#reviews">Reviews</a>
+        <a href="#contato">Contacts</a>
+    </nav>
 
-    <section class="gallery" id="work">
-      <div class="container gallery-grid">
-        <img src="images/imgart1.png" alt="Artwork">
-        <img src="images/imgart2.png" alt="Artwork">
-        <img src="images/imgart3.png" alt="Artwork">
-        <img src="images/imgart4.png" alt="Artwork">
-        <img src="images/imgart5.png" alt="Artwork">
-        <img src="images/imgart6.png" alt="Artwork">
-        <img src="images/imgart7.png" alt="Artwork">
-        <img src="images/imgart8.png" alt="Artwork">
-        <img src="images/imgart9.png" alt="Artwork">
-        <img src="images/imgart10.png" alt="Artwork">
-        <img src="images/imgart11.png" alt="Artwork">
-        <img src="images/imgart12.png" alt="Artwork">
-      </div>
-    </section>
-
-    <section class="about" id="about">
-      <div class="container">
-        <h2 class="section-title" data-translate="about_title">Hi, I’m Pedro!</h2>
-
-        <div class="about-content">
-          <div class="about-illustration">
-            <img src="images/imgabout.png" alt="Illustration of Pedro" />
-          </div>
-
-          <div class="about-text">
-            <p data-translate="about_p1">
-              Also known as Pelucio, I am a freelance illustrator and designer from Brazil. My art is heavily influenced by 80s and 90s cartoons, with bold colors, expressive characters, and that exaggerated energy that defined that era.
-            </p>
-            <p data-translate="about_p2">
-              Drawing has always been part of my life. From an early age, I enjoyed transforming simple ideas into something more interesting, stylish, and alive. Over time, this went from just fun to a profession.
-            </p>
-            <p data-translate="about_p3">
-              Today I work mainly with digital art, creating visual identities and logos, especially for clothing brands and original projects. I like creating things that have a clear personality and truly represent who is behind the brand.
-            </p>
-            <p data-translate="about_p4">
-              I continue exploring new references and seeking projects that challenge me creatively and allow me to evolve my style.
-            </p>
-          </div>
+    <section class="hero" id="projetos">
+        <h1>RESENHA</h1>
+        <div class="hero-box carousel">
+            <div class="carousel-track">
+                <img src="img/resenha1.jpg" alt="Projeto 1">
+                <img src="img/resenha2.jpg" alt="Projeto 2">
+                <img src="img/resenha3.jpg" alt="Projeto 3">
+                <img src="img/resenha4.jpg" alt="Projeto 4">
+                <img src="img/resenha5.jpg" alt="Projeto 5">
+                <img src="img/resenha6.jpg" alt="Projeto 6">
+            </div>
+            <div class="dots">
+                <span class="active"></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <img src="img/sticker.png" class="sticker" alt="É Coisa Séria">
+            <button class="carousel-btn prev">&#10094;</button>
+            <button class="carousel-btn next">&#10095;</button>
         </div>
-      </div>
     </section>
 
-    <section class="products" id="products">
-      <div class="container">
-        <h2 class="section-title center-title" data-translate="products_title">Products and Design</h2>
-        <p class="products-subtitle" data-translate="products_subtitle">Check out some designs. Click on side images to navigate.</p>
+    <div class="divider"></div>
 
-        <div class="carousel-wrapper">
-          <div class="products-carousel">
-            <div class="product-item" data-index="0"><img src="images/product1.png" alt="Design 1"></div>
-            <div class="product-item" data-index="1"><img src="images/product2.png" alt="Design 2"></div>
-            <div class="product-item active" data-index="2"><img src="images/product3.png" alt="Design 3"></div>
-            <div class="product-item" data-index="3"><img src="images/product4.png" alt="Design 4"></div>
-            <div class="product-item" data-index="4"><img src="images/product5.png" alt="Design 5"></div>
-            <div class="product-item" data-index="5"><img src="images/product6.png" alt="Design 6"></div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="container contact-wrapper">
-        
-        <div class="contact-left">
-            <h2 class="contact-title" data-translate="contact_title">LET’S TALK?</h2>
-            <p class="contact-text" data-translate="contact_text">
-            I'm always excited to chat to talk about what I love doing.
-            If you just want to know the new things I've on or support my work,
-            follow me on my social medias.
-            </p>
-            <div class="contact-socials-big">
-                <a href="https://x.com/dinamitestudioo" target="_blank"><img src="images/icon-twitter.png" alt="Twitter"></a>
-                <a href="https://behance.net/pelucio" target="_blank"><img src="images/icon-behance.png" alt="Behance"></a>
-                <a href="https://instagram.com/dinamite.studio" target="_blank"><img src="images/icon-insta.png" alt="Instagram"></a>
+    <section class="about" id="sobre">
+        <h1>HI, I'M PEDRO!</h1>
+        <div class="about-grid">
+            <div class="left">
+                <img src="img/pedro.jpg" alt="Foto Pedro">
+                <div class="soft">
+                    <span>SOFTWARES</span>
+                    <div class="soft-icons">
+                        <img src="img/ps.png" alt="Photoshop">
+                        <img src="img/ai.png" alt="Illustrator">
+                        <img src="img/figma.png" alt="Figma">
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <p>Also known as Pelucio, a freelancer and illustrator from Brazil. My art is heavily influenced by the vibrant cartoon styles of the 80s and 90s.</p>
+                <p>Ever since I was little, art has been my jam. The magic of bringing ideas to life has always fascinated me.</p>
+                <p>Today I work with digital art, branding and clothing design, always looking for new opportunities.</p>
             </div>
         </div>
-
-        <div class="contact-form-area">
-            <div class="form-header">
-                <h3 data-translate="form_header_title">Contact</h3>
-                <p data-translate="form_header_text">Fill the fields here to send an easy message to <a href="mailto:dinamite.studioo@gmail.com">dinamite.studioo@gmail.com</a></p>
-            </div>
-            
-            <form id="contact-form">
-                <input type="hidden" name="_subject" value="Novo contato do Portfólio!">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-
-                <label for="name" data-translate="form_name">Name *</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email" data-translate="form_email">Email *</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message" data-translate="form_message">Message *</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-                
-                <button type="submit" data-translate="form_btn">SEND MESSAGE</button>
-            </form>
-            
-            <input type="hidden" name="_next" value="...">
-        </div>
-
-      </div>
     </section>
-  </main>
 
-  <footer>
-    <p>© 2026 Pelúcio</p>
-  </footer>
+    <div class="divider"></div>
 
-  <button id="lang-btn" onclick="toggleLanguage()">
-    🌐 PT
-  </button>
-  
-  <script>
-    const translations = {
-      "en": {
-        "menu_gallery": "GALLERY",
-        "menu_who": "WHO",
-        "menu_contact": "CONTACT",
-        
-        "hero_title": "DESIGNER & CREATIVE",
-        "hero_subtitle": "Cartoon illustration and design inspired by 80s and 90s aesthetics",
-        
-        "about_title": "Hi, I’m Pedro!",
-        "about_p1": "Also known as Pelucio, I am a freelance illustrator and designer from Brazil. My art is heavily influenced by 80s and 90s cartoons, with bold colors, expressive characters, and that exaggerated energy that defined that era.",
-        "about_p2": "Drawing has always been part of my life. From an early age, I enjoyed transforming simple ideas into something more interesting, stylish, and alive. Over time, this went from just fun to a profession.",
-        "about_p3": "Today I work mainly with digital art, creating visual identities and logos, especially for clothing brands and original projects. I like creating things that have a clear personality and truly represent who is behind the brand.",
-        "about_p4": "I continue exploring new references and seeking projects that challenge me creatively and allow me to evolve my style.",
-        
-        "products_title": "Products and Design",
-        "products_subtitle": "Check out some designs. Click on side images to navigate.",
-        
-        "contact_title": "LET’S TALK?",
-        "contact_text": "I'm always excited to chat to talk about what I love doing. If you just want to know the new things I've on or support my work, follow me on my social medias.",
-        
-        "form_header_title": "Contact",
-        "form_header_text": "Fill the fields here to send an easy message to <a href='mailto:dinamite.studioo@gmail.com'>dinamite.studioo@gmail.com</a>",
-        "form_name": "Name *",
-        "form_email": "Email *",
-        "form_message": "Message *",
-        "form_btn": "SEND MESSAGE"
-      },
-      "pt": {
-        "menu_gallery": "GALERIA",
-        "menu_who": "QUEM SOU",
-        "menu_contact": "CONTATO",
-        
-        "hero_title": "RESENHA É COISA SÉRIA!!",
-        "hero_subtitle": "Ilustração cartoon e design inspirados na estética dos anos 80 e 90",
-        
-        "about_title": "Oi, eu sou o Pedro!",
-        "about_p1": "Também conhecido como Pelúcio, sou ilustrador e designer freelancer do Brasil. Minha arte é muito influenciada pelos cartoons dos anos 80 e 90, com cores fortes, personagens expressivos e aquela energia exagerada que marcou essa época.",
-        "about_p2": "Desenhar sempre fez parte da minha vida. Desde cedo eu curtia transformar ideias simples em algo mais interessante, mais estiloso, mais vivo. Com o tempo, isso deixou de ser só diversão e virou profissão.",
-        "about_p3": "Hoje trabalho principalmente com arte digital, criação de identidades visuais e logotipos, especialmente para marcas de roupa e projetos autorais. Gosto de criar coisas que tenham personalidade clara e que realmente representem quem está por trás da marca.",
-        "about_p4": "Continuo explorando novas referências e buscando projetos que me desafiem criativamente e me permitam evoluir meu estilo.",
-        
-        "products_title": "Produtos e Design",
-        "products_subtitle": "Confira alguns designs. Clique nas imagens laterais para navegar.",
-        
-        "contact_title": "VAMOS CONVERSAR?",
-        "contact_text": "Estou sempre animado para conversar sobre o que amo fazer. Se você quer apenas saber as novidades ou apoiar meu trabalho, me siga nas redes sociais.",
-        
-        "form_header_title": "Contato",
-        "form_header_text": "Preencha os campos abaixo para enviar uma mensagem para <a href='mailto:dinamite.studioo@gmail.com'>dinamite.studioo@gmail.com</a>",
-        "form_name": "Nome *",
-        "form_email": "E-mail *",
-        "form_message": "Mensagem *",
-        "form_btn": "ENVIAR MENSAGEM"
-      }
-    };
+    <section class="projects" id="reviews">
+        <h1>REVIEWS</h1>
+        <div class="grid">
+            <div class="review-box carousel">
+                <div class="carousel-track">
+                    <img src="img/review1.jpg" alt="Review 1">
+                    <img src="img/review2.jpg" alt="Review 2">
+                    <img src="img/review3.jpg" alt="Review 3">
+                    <img src="img/review4.jpg" alt="Review 4">
+                </div>
+                <div class="dots">
+                    <span class="active"></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <button class="carousel-btn prev">&#10094;</button>
+                <button class="carousel-btn next">&#10095;</button>
+            </div>
+        </div>
+    </section>
+</main>
 
-    let currentLang = "en"; 
+<div id="imageModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="zoomedImage">
+</div>
 
-    function toggleLanguage() {
-      currentLang = currentLang === "en" ? "pt" : "en";
+<footer class="footer" id="contato">
+    <div class="left">
+        <h2>LET'S TALK?</h2>
+        <p>I’m always open to new projects and ideas.</p>
+        <div class="icons">
+            <a href="https://x.com/dinamitestudioo" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.behance.net/pelucio" target="_blank"><i class="fab fa-behance"></i></a>
+            <a href="https://www.instagram.com/dinamite.studio/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+    <div class="right">
+        <h2>CONTACT</h2>
+        <p class="mail">peluciodinamitestudio@gmail.com</p>
+        <form id="contactForm" action="https://formsubmit.co/ajax/dinamite.studioo@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="name *" required>
+            <input type="email" name="email" placeholder="email *" required>
+            <textarea name="message" placeholder="leave here your message..." required></textarea>
+            <input type="hidden" name="_subject" value="Novo contato pelo site!">
+            <input type="hidden" name="_captcha" value="false">
+            <button type="submit">SEND MESSAGE</button>
+        </form>
+    </div>
+</footer>
 
-      const btn = document.getElementById("lang-btn");
-      btn.innerHTML = currentLang === "en" ? "🌐 PT" : "🌐 EN";
+<script>
+    // Lógica do carrossel, modal e formulário mantida como antes
+    document.querySelectorAll('.carousel').forEach(carousel => {
+        const images = carousel.querySelectorAll('.carousel-track img');
+        const dots = carousel.querySelectorAll('.dots span');
+        const prevBtn = carousel.querySelector('.prev');
+        const nextBtn = carousel.querySelector('.next');
+        let currentIndex = 0;
+        let autoPlayInterval; 
 
-      const elements = document.querySelectorAll("[data-translate]");
-      
-      elements.forEach((element) => {
-        const key = element.getAttribute("data-translate");
-        if (translations[currentLang][key]) {
-          element.innerHTML = translations[currentLang][key];
+        if(images.length > 0) {
+            images[0].classList.add('active');
+            if(dots.length > 0) dots[0].classList.add('active');
         }
-      });
-    }
-  </script>
 
-  <script>
-    const items = document.querySelectorAll('.product-item');
-    const totalItems = items.length;
-    let activeIndex = 0; 
-    let autoPlayInterval;
-
-    function updateCarousel() {
-      items.forEach(item => {
-        item.classList.remove('active', 'prev', 'next');
-      });
-
-      const prevIndex = (activeIndex - 1 + totalItems) % totalItems;
-      const nextIndex = (activeIndex + 1) % totalItems;
-
-      items[activeIndex].classList.add('active');
-      items[prevIndex].classList.add('prev');
-      items[nextIndex].classList.add('next');
-    }
-
-    function startAutoPlay() {
-      clearInterval(autoPlayInterval);
-      autoPlayInterval = setInterval(() => {
-        moveNext();
-      }, 10000); 
-    }
-
-    function moveNext() {
-      activeIndex = (activeIndex + 1) % totalItems;
-      updateCarousel();
-    }
-
-    function movePrev() {
-      activeIndex = (activeIndex - 1 + totalItems) % totalItems;
-      updateCarousel();
-    }
-
-    items.forEach((item, index) => {
-      item.addEventListener('click', () => {
-        if (item.classList.contains('prev')) {
-          movePrev();
-          startAutoPlay();
+        function updateCarousel(index) {
+            images.forEach(img => img.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            images[index].classList.add('active');
+            if(dots.length > 0) dots[index].classList.add('active');
         }
-        else if (item.classList.contains('next')) {
-          moveNext();
-          startAutoPlay();
+
+        function nextSlide() {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            updateCarousel(currentIndex);
         }
-      });
+
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(nextSlide, 6000);
+        }
+
+        function resetAutoPlay() {
+            clearInterval(autoPlayInterval);
+            startAutoPlay();
+        }
+
+        if(prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+                updateCarousel(currentIndex);
+                resetAutoPlay(); 
+            });
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                resetAutoPlay(); 
+            });
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateCarousel(currentIndex);
+                resetAutoPlay(); 
+            });
+        });
+
+        startAutoPlay();
     });
 
-    updateCarousel();
-    startAutoPlay();
-  </script>
-
-  <script>
-    const form = document.getElementById("contact-form");
-
-    form.addEventListener("submit", function(e) {
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        const formData = new FormData(form);
-        const button = form.querySelector("button");
-        const originalText = button.innerText;
+        const btn = form.querySelector('button');
+        const originalText = btn.innerText;
+        btn.innerText = 'SENDING...';
 
-        button.innerText = "ENVIANDO...";
-
-        fetch("https://formsubmit.co/ajax/dinamite.studioo@gmail.com", {
-            method: "POST",
-            body: formData
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
         })
-        .then(response => response.json())
+        .then(response => {
+            if(!response.ok) throw new Error('Erro no envio');
+            return response.json();
+        })
         .then(data => {
+            btn.innerText = 'SENT!';
             form.reset();
-            alert("Mensagem enviada com sucesso!");
-            button.innerText = originalText;
+            setTimeout(() => { btn.innerText = originalText; }, 3000);
         })
         .catch(error => {
-            console.error('Erro:', error);
-            alert("Houve um erro ao enviar. Tente novamente.");
-            button.innerText = originalText;
+            btn.innerText = 'ERROR!';
+            setTimeout(() => { btn.innerText = originalText; }, 3000);
         });
     });
-  </script>
 
-  <script>
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    const menuNav = document.querySelector('.menu');
-    const menuLinks = document.querySelectorAll('.menu a');
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("zoomedImage");
+    const closeModal = document.querySelector(".close-modal");
+    const galleryImages = document.querySelectorAll('#projetos .carousel-track img');
 
-    menuBtn.addEventListener('click', () => {
-      menuNav.classList.toggle('active');
+    galleryImages.forEach(img => {
+        img.addEventListener('click', function() {
+            modal.style.display = "flex";
+            modalImg.src = this.src; 
+        });
     });
 
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        menuNav.classList.remove('active');
-      });
+    closeModal.addEventListener('click', () => {
+        modal.style.display = "none";
     });
-  </script>
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+</script>
 
 </body>
 </html>

@@ -1,512 +1,495 @@
 /* ==========================================================================
-   1. DECLARAÇÃO DE FONTES
+   1. DECLARAÇÃO DE FONTES (IGUAL AO TEU PORTFÓLIO ANTIGO)
    ========================================================================== */
 
-/* Fonte de Títulos (Eagle Bold) */
 @font-face {
-  font-family: 'eagle-bold';
-  /* Certifique-se que o arquivo eagle-bold.ttf está na pasta fonts */
-  src: url('fonts/eagle-bold.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'futura-extrabold';
+    src: url('fonts/futura-extrabold.ttf') format('truetype'),
+         url('fonts/futura-extrabold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
 }
 
-/* Fonte de Texto (Anonymous Pro) */
 @font-face {
-  font-family: 'Anonymous Pro';
-  src: url('fonts/AnonymousPro-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'Anonymous Pro';
+    src: url('fonts/AnonymousPro-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* ==========================================================================
-   2. RESET E GERAL
+   2. REGRAS GERAIS E LAYOUT
    ========================================================================== */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Anonymous Pro', monospace;
-  line-height: 1.6;
-  color: #333;
-  background-color: #fff;
-  /* Espaço para o header fixo */
-  padding-top: 120px; 
+    background: #fff;
+    font-family: 'Anonymous Pro', monospace;
+    overflow-x: hidden;
 }
 
-img {
-  max-width: 100%;
-  display: block;
+/* TIPOGRAFIA - TÍTULOS E DESTAQUES */
+h1, h2, span, button, b, a {
+    font-family: 'futura-extrabold', sans-serif;
+    font-weight: 800; 
+    text-transform: uppercase;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+/* A PRANCHETA MESTRA */
+.wrapper {
+    width: 82%; 
+    max-width: 1300px; 
+    margin: 0 auto;
+    container-type: inline-size; 
 }
 
-/* Aplica a fonte Eagle Bold em títulos, menu e botões */
-h1, 
-.section-title, 
-.contact-title, 
-.menu, 
-label, 
-button,
-#lang-btn {
-  font-family: 'eagle-bold', sans-serif;
+/* TOPBAR */
+.topbar {
+    background: #000;
+    color: #fff;
+    width: 100%;
+    position: relative;
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+.topbar-inner {
+    width: 82%; 
+    max-width: 1300px; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0; 
+    font-size: 16px;
 }
 
-/* ==========================================================================
-   3. HEADER (DESKTOP)
-   ========================================================================== */
-.header {
-  background-color: #2b65ec;
-  color: #fff;
-  padding: 10px 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+.topbar-inner .icons {
+    display: flex;
+    gap: 20px;
+    font-size: 22px;
 }
 
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.topbar::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2vw; 
+    background: #fff; 
+    border-radius: 4vw 4vw 0 0; 
+    margin-top: 0px; 
 }
 
-.header-logo img {
-  height: 120px; /* Tamanho Desktop */
-  width: auto;
-  display: block;
-  transition: height 0.3s;
+/* NAVEGAÇÃO E LOGO */
+.nav-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4cqi; 
+    padding: 5cqi 0 6cqi; 
 }
 
-.menu {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  text-transform: uppercase;
-  font-size: 1.1rem;
+.nav-header a {
+    font-size: 1.8cqi;
+    color: #000;
+    text-decoration: none;
+    transition: 0.2s;
 }
 
-.socials-icons {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-  margin-left: 20px;
+.nav-header a:hover {
+    color: #2A45E8; 
 }
 
-.socials-icons img {
-  width: 24px;
-  filter: brightness(0) invert(1);
-  transition: transform 0.2s;
+.nav-header img {
+    width: 20cqi; 
 }
 
-.socials-icons img:hover {
-  transform: scale(1.2);
-}
-
-.mobile-menu-btn {
-  display: none;
-}
-
-/* ==========================================================================
-   4. SEÇÕES
-   ========================================================================== */
+/* HERO SECTION */
 .hero {
-  text-align: center;
-  padding: 60px 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  color: #2b65ec;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  line-height: 1.1;
+    font-size: 18.5cqi; 
+    letter-spacing: -0.01em;
+    line-height: 0.75;
+    margin-bottom: 1cqi; 
+    z-index: 1; 
+    width: 100%;
+    text-align: left; 
+    white-space: nowrap; 
+    position: relative;
 }
 
-.subtitle {
-  font-size: 1.1rem;
-  color: #555;
+.hero-box {
+    width: 100%;
+    aspect-ratio: 2.5 / 1; 
+    background: #2A45E8;
+    border-radius: 1cqi; 
+    position: relative;
 }
 
-/* GALERIA */
-.gallery {
-  padding-bottom: 60px;
+/* STICKER (É COISA SÉRIA) */
+.sticker {
+    position: absolute;
+    width: 30cqi; 
+    top: -6cqi; 
+    right: -3cqi;
+    z-index: 5; 
+    transform: rotate(6deg);
+    filter: drop-shadow(0.6cqi 0.6cqi 0px rgba(0,0,0,1)); 
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+/* CARROSSEL - LÓGICA CSS */
+.carousel {
+    position: relative;
 }
 
-.gallery-grid img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-  transition: transform 0.2s;
+.carousel-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; 
+    overflow: hidden; 
 }
 
-.gallery-grid img:hover {
-  transform: scale(1.02);
+.carousel-track img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1;
 }
 
-/* ABOUT (ALTERADO AQUI) */
-.about {
-  padding: 80px 0;
+.carousel-track img.active {
+    opacity: 1; 
+    z-index: 2;
 }
 
-.section-title {
-  font-size: 2.5rem;
-  color: #2b65ec;
-  margin-bottom: 40px;
-  text-align: center;
-  text-transform: uppercase;
+/* MUDANÇA DE CURSOR NAS IMAGENS DE PROJETOS PARA INDICAR ZOOM */
+#projetos .carousel-track img {
+    cursor: zoom-in;
 }
 
-.about-content {
-  display: flex;
-  /* MUDANÇA 1: Alinha os itens (imagem e texto) ao centro verticalmente */
-  align-items: center; 
-  gap: 50px;
+/* BOTÕES DO CARROSSEL */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.2); 
+    color: #fff;
+    border: none; 
+    width: 3cqi; 
+    height: 3cqi;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 4; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5cqi;
+    padding: 0;
+    transition: 0.3s ease;
 }
 
-.about-illustration {
-  flex: 1;
-  /* MUDANÇA 2: Removida a borda e o padding */
-  /* border: 2px solid #333;  <-- REMOVIDO */
-  /* padding: 20px;           <-- REMOVIDO */
-  
-  /* Opcional: garante que a imagem fique centralizada no espaço dela */
-  display: flex;
-  justify-content: center;
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.6); 
+    transform: translateY(-50%) scale(1.05); 
 }
 
-.about-text {
-  flex: 2;
-  font-size: 1rem;
-  text-align: justify;
+.carousel-btn.prev {
+    left: 2cqi;
 }
 
-/* ==========================================================================
-   5. CARROSSEL (PRODUCTS)
-   ========================================================================== */
-.products {
-  padding: 60px 0 100px;
-  overflow: hidden; 
+.carousel-btn.next {
+    right: 2cqi;
 }
 
-.products-subtitle {
-  text-align: center;
-  margin-bottom: 50px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+/* BOLINHAS (DOTS) DO CARROSSEL */
+.dots {
+    position: absolute;
+    bottom: 2cqi;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    display: flex;
+    gap: 1cqi;
 }
 
-.carousel-wrapper {
-  position: relative;
-  width: 100%;
-  height: 450px;
-  display: flex;
-  justify-content: center;
+.dots span {
+    width: 1.2cqi; 
+    height: 1.2cqi;
+    background: rgba(255, 255, 255, 0.4);
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.product-item {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  width: 350px;
-  transition: all 0.5s ease-in-out;
-  opacity: 0;
-  z-index: 0;
-  pointer-events: none;
+.dots span.active {
+    background: #fff;
+    transform: scale(1.2);
 }
 
-.product-item img {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+/* DIVIDER QUADRICULADO */
+.divider {
+    height: 3.5cqi; 
+    margin: 6cqi 0;
+    width: 100%;
+    background: conic-gradient(#000 90deg, transparent 90deg 180deg, #000 180deg 270deg, transparent 270deg);
+    background-size: 3.71cqi 3.499cqi;
 }
 
-.product-item.active {
-  opacity: 1;
-  z-index: 10;
-  transform: translate(-50%, -50%) scale(1);
-  pointer-events: auto;
+/* ABOUT */
+.about h1 {
+    font-size: 12cqi; 
+    margin-bottom: 8.5cqi;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    text-align: left; 
+    width: 100%;
+    white-space: nowrap;
+    padding-right: 0.04em;
 }
 
-.product-item.prev {
-  opacity: 0.6;
-  z-index: 5;
-  left: 20%;
-  transform: translate(-50%, -50%) scale(0.7);
-  filter: blur(3px) grayscale(40%);
-  cursor: pointer;
-  pointer-events: auto;
+.about-grid {
+    display: grid;
+    grid-template-columns: 24cqi 1fr; 
+    gap: 4cqi; 
+    align-items: start; 
 }
 
-.product-item.next {
-  opacity: 0.6;
-  z-index: 5;
-  left: 80%;
-  transform: translate(-50%, -50%) scale(0.7);
-  filter: blur(3px) grayscale(40%);
-  cursor: pointer;
-  pointer-events: auto;
+.about img {
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    object-fit: cover; 
+    border: none;
 }
 
-/* ==========================================================================
-   6. CONTATO E FOOTER
-   ========================================================================== */
-.contact {
-  background: linear-gradient(180deg, #2b65ec 0%, #4a8eff 100%);
-  color: #fff;
-  padding: 60px 0;
+/* SOFTWARE */
+.soft {
+    margin-top: 2cqi;
+    display: flex;
+    align-items: center;
+    gap: 1.5cqi;
 }
 
-.contact-wrapper {
-  display: flex;
-  gap: 50px;
-  align-items: flex-start;
+.soft span {
+    font-size: 1.6cqi;
+    letter-spacing: 0.1cqi;
 }
 
-.contact-left, .contact-form-area {
-  flex: 1;
+.soft-icons {
+    display: flex;
+    gap: 1cqi;
+    align-items: center;
 }
 
-.contact-title {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  text-transform: uppercase;
+.soft-icons img {
+    height: 3.2cqi; 
+    width: auto;
+    object-fit: contain;
 }
 
+/* TEXTO ABOUT */
+.right p {
+    font-size: 1.6cqi; 
+    margin-bottom: 2cqi;
+    line-height: 1.5;
+}
+
+/* SEÇÃO REVIEWS */
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.projects h1 {
+    font-size: 0; 
+    margin-bottom: 3cqi;
+    text-align: center;
+    width: 100%;
+}
+
+.projects h1::after {
+    content: "REVIEWS"; 
+    font-size: 14.5cqi;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    white-space: nowrap;
+    padding-right: 0.04em;
+}
+
+.grid {
+    display: flex; 
+    justify-content: center;
+    width: 100%;
+}
+
+.review-box {
+    width: 100%;
+    aspect-ratio: 2.5 / 1; 
+    background: #2A45E8;
+    border-radius: 2cqi;
+    position: relative;
+}
+
+/* FOOTER */
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 7cqi;
+    width: 100%; 
+}
+
+.footer .left {
+    background: #2A45E8;
+    color: #fff;
+    padding: 5cqi 6cqi; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer .right {
+    background: #8899F9;
+    padding: 5cqi 6cqi; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer h2 {
+    font-size: 3.5cqi; 
+    margin-bottom: 1.5cqi; 
+    letter-spacing: -0.05em;
+}
+
+.footer p {
+    font-size: 1.3cqi; 
+    margin-bottom: 2.5cqi;
+    line-height: 1.5;
+}
+
+.footer .icons {
+    display: flex;
+    gap: 1.5cqi;
+    font-size: 2.8cqi; 
+}
+
+/* FORM */
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-label {
-  font-weight: bold;
-  color: #000;
+    display: flex;
+    flex-direction: column;
 }
 
 input, textarea {
-  padding: 10px;
-  border-radius: 20px;
-  border: none;
-  width: 100%;
-  font-family: 'Anonymous Pro', monospace;
+    width: 100%;
+    margin-bottom: 1.2cqi; 
+    padding: 1.2cqi 1.5cqi; 
+    border: none;
+    border-radius: 1.5cqi;
+    font-size: 1.1cqi; 
+    outline: none;
+    font-family: 'Anonymous Pro', monospace;
+}
+
+textarea {
+    height: 7cqi; 
+    resize: none;
 }
 
 button {
-  background-color: #e0e0e0;
-  border: 2px solid #000;
-  padding: 10px 40px;
-  border-radius: 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-top: 10px;
-  text-transform: uppercase;
-}
-
-.contact-socials-big {
-  display: flex;
-  gap: 25px;
-  margin-top: 30px;
-}
-
-.contact-socials-big img {
-  width: 40px !important;
-  height: auto !important;
-  filter: brightness(0) invert(1);
-  display: block;
-}
-
-footer {
-  background-color: #1a4bc9;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
-
-/* ==========================================================================
-   7. BOTÃO DE TRADUÇÃO (FLUTUANTE)
-   ========================================================================== */
-#lang-btn {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  z-index: 9999;
-  
-  background-color: #2b65ec;
-  color: #fff;
-  border: 2px solid #fff;
-  border-radius: 30px;
-  
-  padding: 10px 20px;
-  font-weight: bold;
-  font-size: 0.9rem;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: transform 0.2s, background 0.2s;
-}
-
-#lang-btn:hover {
-  transform: scale(1.1);
-  background-color: #fff;
-  color: #2b65ec;
-  border-color: #2b65ec;
-}
-
-/* ==========================================================================
-   8. VERSÃO MOBILE (RESPONSIVIDADE COMPLETA)
-   ========================================================================== */
-@media (max-width: 768px) {
-
-  /* Botão Menu Hambúrguer (Ajuste p/ iPhone) */
-  .mobile-menu-btn {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-    width: 45px !important; 
-    height: 45px !important;
-    
-    background: transparent !important;
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    -webkit-appearance: none !important; /* Essencial para iPhone */
-    appearance: none !important;
-    outline: none !important;
-    
+    width: 100%; 
+    padding: 1.2cqi;
+    border: 0.3cqi solid #000;
+    background: #eee;
     cursor: pointer;
-    z-index: 2002;
-    -webkit-tap-highlight-color: transparent;
-  }
-  
-  .mobile-menu-btn span {
-    display: block;
-    width: 30px !important;
-    height: 3px !important;
-    background-color: #fff !important;
-    border-radius: 2px;
-    flex-shrink: 0;
-  }
+    border-radius: 1.5cqi;
+    margin-top: 0.5cqi;
+    font-size: 1.2cqi;
+    transition: 0.2s;
+    font-family: 'futura-extrabold', sans-serif;
+}
 
-  /* Header Fixo */
-  .header {
-    height: 80px !important;
-    padding: 0 !important;
-    display: flex;
-    align-items: center;
-  }
-
-  .header-container {
-    width: 90% !important;
-    display: flex !important;
-    justify-content: space-between !important; 
-    align-items: center !important;
-    flex-direction: row !important;
-  }
-
-  .header-logo img {
-    height: 100px !important; /* Logo Grande no Mobile */
-    width: auto !important;
-  }
-  
-  body {
-    padding-top: 80px;
-  }
-
-  /* Menu Overlay */
-  .menu {
-    position: fixed !important;
-    top: 0;
-    right: -100% !important;
-    width: 80% !important;
-    height: 100vh !important;
-    background-color: #2b65ec !important;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
-    
-    flex-direction: column !important;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    
-    transition: right 0.3s ease-in-out;
-    z-index: 2000;
-  }
-
-  .menu.active {
-    right: 0 !important;
-  }
-
-  .menu a {
-    font-size: 1.5rem;
+button:hover {
+    background: #000;
     color: #fff;
-  }
-  
-  .socials-icons {
-    margin-left: 0;
-    justify-content: center;
-  }
+}
 
-  /* Ajustes de Layout */
-  .hero h1 { font-size: 2rem; }
-
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px;
-  }
-
-  .about-content, .contact-wrapper {
-    flex-direction: column;
-    /* MUDANÇA MOBILE: Garante que fiquem centralizados quando empilhados */
-    align-items: center;
-  }
-  
-  .contact-left, .contact-form-area {
+/* ==========================================================================
+   MODAL DE ZOOM (LIGHTBOX)
+   ========================================================================== */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 9999; /* Fica acima de TUDO no site */
+    left: 0;
+    top: 0;
     width: 100%;
-  }
-  
-  /* Ajuste do Botão de Tradução no Mobile */
-  #lang-btn {
-    bottom: 15px;
-    left: 15px;
-    padding: 8px 15px;
-    font-size: 0.8rem;
-  }
-  
-  /* Carrossel */
-  .carousel-wrapper { height: 350px; }
-  .product-item { width: 220px; }
-  .product-item.prev { left: 10%; }
-  .product-item.next { left: 90%; }
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Fundo preto transparente */
+    backdrop-filter: blur(5px); /* Desfoque do fundo (toque profissional) */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; /* Garante que a imagem inteira caiba na tela */
+    border-radius: 1cqi;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    animation: zoomIn 0.3s ease; /* Animação de entrada */
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-modal {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #fff;
+    font-size: 40px;
+    font-family: 'futura-extrabold', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.close-modal:hover {
+    color: #2A45E8; /* Cor da Dinamite ao passar o mouse */
+    transform: scale(1.1);
+}
+
+/* AJUSTE PARA OS LINKS DE ÍCONES */
+.icons a {
+    color: inherit; /* Mantém a cor do texto (branco no topo/footer azul) */
+    text-decoration: none; /* Remove qualquer sublinhado */
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.icons a:hover {
+    transform: scale(1.15); /* Aumenta levemente ao passar o mouse */
+    opacity: 0.8; /* Dá uma leve transparência */
 }
