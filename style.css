@@ -572,4 +572,27 @@ button:hover {
     .footer h2 {
         font-size: 32px;
     }
-}
+}/* -------------------------------------------
+       CORREÇÃO DO TEXTO "SOBRE MIM"
+       ------------------------------------------- */
+    .right p {
+        font-size: 16px; /* Tamanho perfeito e padrão para leitura no celular */
+        line-height: 1.6; /* Aumenta o espaço entre as linhas para não sufocar */
+        margin-bottom: 20px; /* Dá um respiro entre um parágrafo e outro */
+        text-align: center; /* Centraliza para acompanhar a foto e os ícones */
+        padding: 0 10px; /* Impede que o texto encoste 100% na borda da tela */
+    }
+
+    /* Garantindo que o título "SOFTWARES" e os ícones fiquem legíveis também */
+    .soft {
+        justify-content: center;
+        margin-bottom: 24px; /* Empurra o texto de baixo um pouco mais pra longe */
+    }
+
+    .soft span {
+        font-size: 14px;
+    }
+
+    .soft-icons img {
+        height: 25px;
+    }
