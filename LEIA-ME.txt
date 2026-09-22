@@ -1,0 +1,24 @@
+PORTFÓLIO — DINAMITE STUDIO
+
+Abra index.html no navegador. Mantenha style.css, script.js, contact.js e assets juntos. Para publicar, envie todo o conteúdo da pasta portfolio para sua hospedagem.
+
+CONTATO
+O formulário usa a mesma integração do site original fornecido pelo proprietário:
+POST https://formsubmit.co/ajax/dinamite.studioo@gmail.com
+Campos: name, email, message, _subject (Novo contato pelo site!), _captcha (false).
+O envio acontece diretamente pela página, sem abrir Gmail ou aplicativo de e-mail. O botão indica o andamento. A confirmação só aparece quando o serviço retorna success=true. Falhas preservam a mensagem e permitem nova tentativa. Em caso de tempo limite, não há reenvio automático, pois não é possível saber se o serviço já recebeu a primeira solicitação.
+A integração depende do FormSubmit e da ativação do endereço destinatário no serviço. Foi reaproveitado o endereço utilizado no site atual. Testes locais simularam as respostas e interceptaram todas as solicitações; não foi enviado e-mail real nem verificada a entrega na caixa de entrada.
+
+CARROSSÉIS E ARTES
+Os três carrosséis têm seis posições, setas, indicadores, teclado e gesto de deslizar. Os quatro quadrados acompanham o projeto selecionado. Para adicionar as artes, edite carouselPosts em script.js: image/title/alt para a arte principal; gallery com até quatro objetos {src, alt} para os quadrados; title/quote/author para depoimentos.
+As posições ainda não preenchidas estão identificadas. Não há depoimentos inventados.
+Clique em uma imagem para ampliá-la. A visualização não mostra título; feche pelo botão Close ou Esc. As faixas Dinamite se movem em looping e respeitam movimento reduzido.
+
+O pacote inclui as imagens do Figma e as fontes Eagle Bold e Anonymous Pro Bold encontradas no computador. Origem: frame home (8:17) do arquivo novo portfólio (Copy).
+https://www.figma.com/design/T4mE7xIWrLXnu0XtPMTPAo/?node-id=8-17
+
+REFINAMENTO VISUAL: títulos menores, biografia resumida, Projects antes de Feedbacks e legendas com contexto do projeto. refinement.css contém os novos ajustes visuais. A cópia completa anterior está em portfolio-antes-refinamento. O arquivo contact.js foi preservado sem alterações. Depoimentos aceitam quote, author e role no script.js.
+
+SEÇÕES: menu na ordem About, Projects, Feedbacks, Contact. sections.css e sections.js controlam cinco blocos com transição de opacidade e deslocamento na rolagem. A rolagem é nativa, com alinhamento suave no desktop, sem captura de roda do mouse. Movimento reduzido mantém tudo visível, sem transição. Backup anterior: portfolio-antes-transicoes.
+
+APRESENTAÇÃO EM SLIDES: uma única seção visível por vez. Menu e controles anterior/próxima permanecem disponíveis. A roda do mouse troca a seção após o final do conteúdo; no celular, conteúdo longo tem rolagem interna antes da troca. Transição vertical de 680 ms, sem animação quando movimento reduzido está ativo. A versão anterior está em portfolio-antes-slides.

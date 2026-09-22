@@ -1,0 +1,65 @@
+html:has(.presentation),body:has(.presentation){height:100%;overflow:hidden;scroll-behavior:auto}
+.site.presentation{width:calc(100% - 32px);max-width:1440px;height:calc(100dvh - 24px);margin:12px auto;display:flex;flex-direction:column;border-radius:12px;overflow:hidden}
+.presentation .header{height:82px;min-height:82px;padding:10px 40px}.presentation .header nav{gap:26px}.presentation .brand{width:174px}.presentation .nav-link{font-size:15px;min-height:34px;border-radius:12px}
+.presentation>.ticker{height:30px;min-height:30px;font-size:19px}.presentation>.contact-ticker{display:none}
+.slide-stage{position:relative;flex:1;min-height:0;overflow:hidden;background:white;isolation:isolate}
+.presentation .slide-panel{position:absolute;inset:0;width:100%;height:100%;margin:0!important;padding:32px 48px;overflow-y:auto;overscroll-behavior-y:contain;scroll-behavior:auto;min-height:0!important;outline-offset:-5px;background:white;box-sizing:border-box}
+.presentation .slide-panel[hidden]{display:none!important}
+.presentation .featured-section,.presentation .about,.presentation .projects,.presentation .feedbacks{display:flex;flex-direction:column;justify-content:safe center}
+.presentation .hero{margin:0;flex-shrink:0;max-height:calc(100% - 60px);min-height:160px;width:100%;aspect-ratio:2.5}.presentation .featured-caption{margin-inline:0}
+.presentation .about{border:0}.presentation .about-grid{width:100%;margin:0 auto}
+.presentation .project-grid{grid-template-rows:repeat(2,minmax(110px,1fr));height:clamp(240px,48vh,470px);min-height:240px;flex-shrink:0;margin-top:22px}.presentation .project-feature{min-height:0;aspect-ratio:auto}.presentation .project-tile{aspect-ratio:auto}
+.presentation .section-heading h2{font:700 clamp(30px,3.5vw,54px)/1.1 Eagle,sans-serif;color:var(--red);text-align:left}
+.presentation .feedback-panel.carousel{height:clamp(220px,45vh,420px);min-height:220px;flex-shrink:0}
+.presentation .contact{padding:0;display:grid;grid-template-columns:1fr 1fr;background:var(--lavender)}.presentation .lets-talk{padding:36px;min-width:0}.presentation .talk-copy{padding:0}.presentation .talk-copy h2{font-size:clamp(30px,3.4vw,52px);margin:0 0 28px;white-space:normal}.presentation .talk-copy p{font-size:clamp(17px,1.6vw,23px);line-height:1.4;text-align:left}
+.presentation .contact-form{padding:22px 42px}.presentation .contact-form h2{font-size:clamp(32px,3.5vw,52px)}.presentation .form-intro{font-size:16px}.presentation .email-link{font-size:20px;margin:16px 0 30px}.presentation .field{margin-bottom:28px}.presentation .field label{font-size:15px;top:-11px}.presentation .field input{min-height:38px;font-size:16px}.presentation .field textarea{height:110px;min-height:90px;font-size:16px;padding-top:18px}.presentation .contact-form form>button{min-height:42px;font-size:15px}.presentation .form-note{font-size:13px}
+.presentation .footer-logo{width:150px;height:54px}.presentation .socials img,.presentation .socials li:nth-child(2) img,.presentation .socials li:last-child img{width:36px;height:36px}.presentation .socials{gap:10px}
+.slide-navigation{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-shrink:0;min-height:44px;padding:5px 24px;border-top:1px solid #e5e5e5;background:white;font-size:12px}.slide-navigation button{width:auto;min-height:32px;border:0;padding:4px 10px;background:none;color:#0041a2;font:700 13px 'Anonymous Pro',monospace}.slide-navigation button:disabled{opacity:.25;cursor:default}.nav-link[aria-current="location"]{background:var(--blue)}
+@media(max-width:760px){.site.presentation{width:100%;height:100dvh;margin:0;border-radius:0}.presentation .header{height:114px;min-height:114px;padding:8px 14px}.presentation .header nav{gap:5px 10px}.presentation .brand{width:140px;margin-bottom:0}.presentation .nav-link{font-size:12px;min-height:32px}.presentation>.ticker{height:26px;min-height:26px;font-size:16px}.presentation .slide-panel{padding:24px 20px}.presentation .about-grid{gap:20px}.presentation .bio{font-size:17px;line-height:1.4}.presentation .bio h1{font-size:29px;margin-bottom:18px}.presentation .portrait{width:98px;height:135px}.presentation .tools img{width:30px;height:30px}.presentation .hero{aspect-ratio:1.6;min-height:180px;max-height:none}.presentation .section-heading h2{font-size:32px}.presentation .project-grid{height:auto;min-height:0;grid-template-rows:210px repeat(2,130px);grid-template-columns:1fr 1fr;gap:12px}.presentation .project-feature{grid-row:1}.presentation .project-tile{aspect-ratio:auto}.presentation .contact{display:block;padding:0}.presentation .lets-talk{padding:26px 22px}.presentation .contact-form{padding:28px 22px}.presentation .contact-brands{margin-top:20px}.presentation .email-link{font-size:17px}.presentation .talk-copy h2{font-size:32px}.slide-navigation{padding-inline:8px;font-size:10px}.slide-navigation button{font-size:11px;padding:4px}}
+@media print{html:has(.presentation),body:has(.presentation){height:auto;overflow:visible}.site.presentation{height:auto;display:block}.slide-stage{overflow:visible}.presentation .slide-panel,.presentation .slide-panel[hidden]{position:static;display:block!important;height:auto;overflow:visible;break-before:page}.slide-navigation{display:none}}
+
+/* Use the available slide area for the artwork. */
+.presentation .featured-section,.presentation .projects,.presentation .feedbacks{padding:20px 28px;justify-content:flex-start;gap:0}
+.presentation .hero{flex:1 1 auto;aspect-ratio:auto;max-height:none;min-height:220px}
+.presentation .featured-caption,.presentation .projects>.project-caption{flex-shrink:0;padding-top:12px}
+.presentation .section-heading{flex-shrink:0}
+.presentation .project-grid{flex:1 0 260px;height:auto;min-height:260px;grid-template-columns:1fr 1fr 4.4fr;grid-template-rows:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+.presentation .feedback-panel.carousel{flex:1 0 240px;height:auto;min-height:240px;margin-top:18px}
+@media(max-width:760px){
+ .presentation .featured-section,.presentation .projects,.presentation .feedbacks{padding:18px 14px}
+ .presentation .hero{min-height:260px;aspect-ratio:auto}
+ .presentation .project-grid{flex:0 0 auto;height:auto;grid-template-columns:1fr 1fr;grid-template-rows:minmax(280px,48svh) repeat(2,130px);gap:12px}
+ .presentation .feedback-panel.carousel{min-height:280px}
+}
+
+@media(min-width:761px){.presentation .project-tile{aspect-ratio:1;width:100%;height:auto;align-self:center}}
+
+/* Match text buttons to the heading typeface. */
+.presentation .nav-link,.presentation .contact-form button,.art-viewer .viewer-close{font-family:Eagle,'Arial Black',sans-serif;font-weight:700}
+
+
+.presentation .nav-link{font-size:13px}.presentation .contact-form form>button{font-size:13px}.art-viewer .viewer-close{font-size:14px}
+@media(max-width:760px){.presentation .nav-link{font-size:10px}}
+
+
+/* Text-only navigation, with a discreet active-section underline. */
+.presentation .nav-link,.presentation .nav-link:hover,.presentation .nav-link[aria-current="location"]{background:transparent;color:#000;border-radius:0;transform:none;text-decoration:none}
+.presentation .nav-link:hover,.presentation .nav-link[aria-current="location"]{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.presentation [data-carousel="feedback"] .carousel-slide img{background:#fff}
+.presentation [data-carousel="feedback"] .carousel-arrow{color:#000;text-shadow:0 1px 2px #fff,0 -1px 2px #fff}
+.presentation [data-carousel="feedback"] .carousel-dot::after{background:#777;box-shadow:0 0 0 1px #fff}
+.presentation [data-carousel="feedback"] .carousel-dot[aria-current="true"]::after{background:#000}
+
+/* Keep every project card inside its grid cell so row gaps never collapse. */
+@media(min-width:761px){
+ .presentation .project-grid{gap:18px;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,4.4fr);grid-template-rows:repeat(2,minmax(0,1fr))}
+ .presentation .project-tile{aspect-ratio:auto;width:100%;height:100%;min-height:0;align-self:stretch}
+ .presentation .project-feature{height:100%;align-self:stretch}
+}
+.presentation .projects>.project-caption{padding-top:16px}
+
+/* Extend each artwork's own background without cropping its foreground. */
+.presentation [data-carousel="featured"] .carousel-slide,.presentation [data-carousel="featured"] .carousel-slide img{background:var(--art-background,#0073c7)}
+.presentation [data-carousel="featured"] .carousel-slide{position:relative;overflow:hidden;isolation:isolate}
+.presentation [data-carousel="featured"] .carousel-slide img{object-fit:contain;object-position:center;background:transparent}
+.presentation [data-carousel="featured"] .extended-art-background::before{content:"";position:absolute;inset:-45px;background-image:var(--art-fill);background-size:cover;background-position:center;filter:blur(35px);z-index:-1;pointer-events:none}

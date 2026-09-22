@@ -1,0 +1,130 @@
+/* Reversible presentation pass; loaded after the existing slide layout. */
+.presentation .project-video-slide{--art-background:#fff;background:#fff}
+.project-video-slide video{position:absolute;inset:0 0 36px;display:block;width:100%;height:calc(100% - 36px);min-height:0;object-fit:contain;background:#fff}
+.presentation [data-carousel="projects"]:has(.project-video-slide[aria-hidden="false"]) .carousel-arrow{color:#111;text-shadow:none}
+.presentation [data-carousel="projects"]:has(.project-video-slide[aria-hidden="false"]) .carousel-dot::after{background:#777}
+.presentation [data-carousel="projects"]:has(.project-video-slide[aria-hidden="false"]) .carousel-dot[aria-current="true"]::after{background:#111}
+.presentation .project-caption p,.presentation .section-heading>p,
+.presentation .testimonial-role,.presentation .feedback-copy blockquote,
+.presentation .talk-copy,.presentation .form-intro,.presentation .form-note,
+.presentation .field input,.presentation .field textarea{font-family:'Anonymous Pro','Courier New',monospace!important}
+.featured-thumbnails{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;flex:0 0 100px;margin-top:14px;min-height:0}
+.featured-thumb{min-width:0;min-height:0;display:flex;flex-direction:column;background:var(--art-background);overflow:hidden;border:2px solid transparent;height:100px;border-radius:8px}
+.featured-thumb.is-selected{border-color:var(--red)}
+.featured-thumb .artwork-open{display:block;width:100%;flex:1;min-height:0;padding:0;border:0;border-radius:0;background:transparent;cursor:zoom-in}
+.featured-thumb img{width:100%;height:100%;object-fit:cover;object-position:center;background:transparent}
+.presentation .featured-section{align-items:center;justify-content:flex-start}
+.featured-art-area{flex:1 1 0;min-height:0;width:100%;container-type:size;display:grid;place-items:center}
+.presentation .featured-section .hero{width:min(100cqw,calc(100cqh * 100 / 51));height:auto;min-height:0;max-height:none;aspect-ratio:100/51}
+.presentation .featured-section .featured-caption{width:100%;flex:0 0 auto}
+.presentation .featured-section .featured-thumbnails{flex:0 0 auto;height:auto;grid-template-columns:repeat(4,minmax(0,1fr))}
+.presentation .featured-section .featured-thumb{position:relative;height:auto;aspect-ratio:100/51;border:0;box-shadow:inset 0 0 0 2px transparent}
+.presentation .featured-section .featured-thumb.is-selected::after{content:"";position:absolute;inset:0;pointer-events:none;border:2px solid var(--red);border-radius:inherit}
+.presentation .featured-section .featured-thumb .artwork-open{position:absolute;inset:0;display:block;height:100%;width:100%}
+.presentation .featured-section .featured-thumb img{object-fit:contain}
+.presentation .project-tile{min-width:0;overflow:hidden}
+.presentation .project-tile .tile-pending{padding:12px;gap:8px}.presentation .project-tile .tile-pending strong{font-size:15px;word-break:normal}
+.project-thumb-label{display:block;width:100%;min-width:0;background:white;color:black;font:700 12px/1.3 'Anonymous Pro',monospace;padding:5px 7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex-shrink:0}
+.presentation [data-carousel="projects"] .carousel-slide{position:relative;overflow:hidden;isolation:isolate;background:var(--art-background)}
+.presentation [data-carousel="projects"] .carousel-slide img{object-fit:contain;background:transparent}
+.presentation [data-carousel="projects"] .extended-art-background::before{content:"";position:absolute;inset:-40px;background:var(--art-fill) center/cover;filter:blur(35px);z-index:-1}
+.presentation .project-caption{min-width:0;gap:10px 20px}.presentation .project-caption>span{flex-shrink:1}
+.presentation .feedback-panel.carousel{min-height:350px;flex:1 0 350px;background:#fff;border:1px solid #ededed}
+.presentation .feedback-story{display:grid;grid-template-columns:minmax(180px,.8fr) minmax(0,1.2fr);gap:clamp(24px,4vw,64px);align-items:center;padding:30px 64px 50px;background:#fff;color:#111}
+.presentation .feedback-story .feedback-art{height:auto;aspect-ratio:1;overflow:hidden;min-width:0;border-radius:10px}
+.presentation .feedback-story .feedback-art img{width:250%;max-width:none;height:100%;object-fit:fill}
+.feedback-copy{min-width:0}.feedback-copy blockquote{margin:0;white-space:pre-line;font:400 clamp(16px,1.35vw,21px)/1.55 Arial,sans-serif;letter-spacing:-.01em}
+.feedback-author{margin-top:22px;font:700 16px/1.3 'Anonymous Pro',monospace}
+.presentation .contact{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+.presentation .lets-talk{padding:clamp(24px,4vw,56px)}
+.presentation .contact-form{min-width:0;padding:26px clamp(20px,3vw,44px);text-align:left}
+.presentation .contact-form h2{font-size:clamp(30px,3.3vw,46px)}
+.presentation .email-link{display:inline-block;max-width:100%;font-size:clamp(13px,1.65vw,20px);white-space:nowrap;overflow-wrap:normal;word-break:normal;margin:14px 0 32px;text-underline-offset:4px}
+.presentation .field label{position:static;display:block;background:transparent;padding:0 0 7px;font:700 14px/1.3 'Anonymous Pro',monospace}
+.presentation .field label span{font-size:1em}.presentation .field{margin-bottom:16px}
+.presentation .field input,.presentation .field textarea{border-radius:8px;padding:11px 13px;font:400 16px/1.4 Arial,sans-serif;min-height:44px}
+.presentation .field textarea{height:125px;padding-top:11px}
+.presentation .contact-form form>button{width:auto;padding:10px 20px;min-height:44px;border-radius:8px;background:#111;color:#fff;border-color:#111;font-size:12px}
+.presentation .contact-form form>button:hover{background:#333}.presentation .form-note{font:400 13px/1.4 Arial,sans-serif}
+@media(max-width:1000px){
+ .presentation .feedback-story{grid-template-columns:minmax(150px,.65fr) minmax(0,1.35fr);gap:22px;padding:26px 44px 48px}
+ .feedback-copy blockquote{font-size:16px;line-height:1.45}
+ .presentation .contact{display:flex;flex-direction:column}.presentation .lets-talk{order:1;flex-shrink:0;padding:24px 28px;gap:20px}.presentation .talk-copy p{font-size:17px}.presentation .talk-copy h2{margin-bottom:14px}.presentation .contact-brands{margin-top:8px}
+ .presentation .contact-form{order:0;flex-shrink:0;width:100%;padding:28px;max-width:660px;margin:0 auto}.presentation .email-link{font-size:clamp(13px,3.5vw,19px)}
+}
+@media(max-width:600px){
+ .featured-thumbnails{flex-basis:85px;gap:8px;margin-top:10px}.featured-thumb{height:85px}
+ .project-thumb-label{font-size:10px;padding:4px}.presentation .projects>.project-caption{padding-top:12px}
+ .presentation .feedback-panel.carousel{flex:0 0 auto;height:640px;min-height:640px}
+ .presentation .feedback-story{grid-template-columns:1fr;grid-template-rows:160px 1fr;gap:18px;padding:22px 32px 46px;align-items:start}
+ .presentation .feedback-story .feedback-art{height:160px;width:160px;justify-self:center}
+ .feedback-copy blockquote{font-size:15px;line-height:1.45}.feedback-author{margin-top:16px;font-size:14px}
+}
+
+/* Compact contact layout keeps the form and social links in the same view. */
+.presentation .contact-form{padding:20px clamp(20px,3vw,44px);align-self:center}
+.presentation .contact-form h2{font-size:clamp(28px,3vw,42px);margin-bottom:6px}
+.presentation .email-link{margin:10px 0 18px}
+.presentation .contact-form form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 16px}
+.presentation .contact-form .field{margin:0;min-width:0}
+.presentation .message-field,.presentation .form-note{grid-column:1/-1}
+.presentation .contact-form form>button{justify-self:start;grid-column:1/-1}
+.presentation .contact-form .form-note{margin:0}
+.presentation .field textarea{height:100px;min-height:70px}
+@media(min-width:701px){
+ .presentation .contact{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+ .presentation .contact-form{order:initial;max-width:none}
+ .presentation .lets-talk{order:initial;padding:clamp(20px,3vw,44px)}
+}
+@media(max-width:700px){
+ .presentation .contact{display:flex;flex-direction:column}
+ .presentation .contact-form{padding:16px 20px;flex:0 0 auto}
+ .presentation .contact-form h2{font-size:28px}
+ .presentation .form-intro{font-size:14px;line-height:1.3}
+ .presentation .email-link{margin:8px 0 12px;font-size:16px}
+ .presentation .contact-form form{gap:8px 12px}
+ .presentation .field label{padding-bottom:4px;font-size:13px}
+ .presentation .field input{padding:8px 10px}
+ .presentation .field textarea{height:76px;min-height:60px;padding:8px 10px}
+ .presentation .form-note{font-size:11px}
+ .presentation .lets-talk{padding:16px 20px;gap:10px;flex:1 0 auto}
+ .presentation .talk-copy h2{font-size:24px;margin-bottom:8px}
+ .presentation .talk-copy p{font-size:14px;line-height:1.3;margin-bottom:6px}
+ .presentation .contact-brands{margin-top:0}
+ .presentation .footer-logo{width:110px;height:38px}
+ .presentation .socials img,.presentation .socials li:nth-child(2) img,.presentation .socials li:last-child img{width:30px;height:30px}
+}
+@media(min-width:701px) and (max-height:650px){
+ .presentation .contact-form{padding-block:10px}
+ .presentation .contact-form h2{font-size:26px}
+ .presentation .email-link{margin:6px 0 10px}
+ .presentation .contact-form form{gap:7px 12px}
+ .presentation .field textarea{height:70px;min-height:60px}
+ .presentation .talk-copy h2{font-size:30px;margin-bottom:16px}
+ .presentation .talk-copy p{font-size:16px}
+}
+@media(max-width:700px) and (max-height:720px){
+ .presentation .contact-form{padding:10px 16px}
+ .presentation .contact-form h2{font-size:24px;margin-bottom:3px}
+ .presentation .email-link{margin:5px 0 8px;font-size:15px}
+ .presentation .contact-form form{gap:6px 10px}
+ .presentation .field textarea{height:60px}
+ .presentation .lets-talk{padding:10px 16px;gap:6px}
+ .presentation .talk-copy h2{font-size:20px;margin-bottom:4px}
+ .presentation .talk-copy p{font-size:13px;line-height:1.2;margin-bottom:4px}
+ .presentation .footer-logo{width:90px;height:30px}
+}
+
+.presentation .feedback-full-art .feedback-art img{width:100%;height:100%;object-fit:contain;background:#000}
+.presentation .feedback-long{grid-template-rows:minmax(0,1fr)}
+.presentation .feedback-long .feedback-copy{max-height:100%;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding-right:12px;scrollbar-width:thin}
+.presentation .feedback-long blockquote{font-size:16px;line-height:1.45;letter-spacing:0}
+@media(max-width:600px){.presentation .feedback-long{grid-template-rows:160px minmax(0,1fr)}}
+
+/* Display the square red logo area without the source file's white margins. */
+.presentation .carousel .square-logo-art{container-type:size;display:grid;place-items:center;background:#e30613}
+.square-logo-frame{display:block;position:relative;width:min(100cqw,100cqh);aspect-ratio:1;overflow:hidden}
+.presentation [data-carousel="projects"] .square-logo-frame img{position:absolute;left:0;top:-7.260133%;width:100%;height:114.071319%;max-width:none;object-fit:fill}
+.presentation [data-carousel="projects"]:has(.light-project-slide[aria-hidden="false"]) .carousel-arrow{color:#111;text-shadow:none}
+.presentation [data-carousel="projects"]:has(.light-project-slide[aria-hidden="false"]) .carousel-dot::after{background:#777}
+.presentation [data-carousel="projects"]:has(.light-project-slide[aria-hidden="false"]) .carousel-dot[aria-current="true"]::after{background:#111}
