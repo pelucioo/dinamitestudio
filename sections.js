@@ -1,5 +1,30 @@
 (() => {
   const site=document.querySelector('.site'),panels=[...document.querySelectorAll('[data-slide]')],menu=[...document.querySelectorAll('.nav-link')],reduced=matchMedia('(prefers-reduced-motion: reduce)');
+  // Touch devices use the browser's native page scrolling, including momentum.
+  if(matchMedia('(max-width: 760px), (pointer: coarse)').matches){
+    site.classList.add('presentation','mobile-flow');
+    panels.forEach(p=>{p.classList.add('slide-panel');p.hidden=false;p.inert=false;});
+    const syncMobile=()=>{
+      const line=innerHeight*.3;
+      const atBottom=scrollY+innerHeight>=document.documentElement.scrollHeight-2;
+      const active=atBottom?panels[panels.length-1]:panels.find(p=>{const r=p.getBoundingClientRect();return r.top<=line&&r.bottom>line;})||panels[0];
+      site.dataset.activeSection=active.id;
+      menu.forEach(a=>{if(a.hash==='#'+active.id)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});
+    };
+    let frame=0;
+    addEventListener('scroll',()=>{if(!frame)frame=requestAnimationFrame(()=>{frame=0;syncMobile();});},{passive:true});
+    addEventListener('resize',syncMobile);
+    const feedback=document.querySelector('[data-carousel="feedback"]');
+    if(feedback){
+      const fitFeedback=()=>{const active=feedback.querySelector('.carousel-slide[aria-hidden="false"]');if(active)feedback.style.height=Math.ceil(active.getBoundingClientRect().height+2)+'px';};
+      const sizes=new ResizeObserver(fitFeedback);
+      feedback.querySelectorAll('.carousel-slide').forEach(slide=>sizes.observe(slide));
+      new MutationObserver(fitFeedback).observe(feedback,{subtree:true,attributes:true,attributeFilter:['aria-hidden']});
+      fitFeedback();
+    }
+    requestAnimationFrame(()=>{const target=panels.find(p=>'#'+p.id===location.hash);if(target)target.scrollIntoView({behavior:'instant'});syncMobile();});
+    return;
+  }
   const stage=document.createElement('div');stage.className='slide-stage';stage.setAttribute('aria-label','Portfolio sections');
   const main=document.querySelector('main');main.before(stage);
   panels.forEach(p=>{p.classList.add('slide-panel');p.tabIndex=-1;stage.append(p);p.hidden=true;p.inert=true;});main.remove();

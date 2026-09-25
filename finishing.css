@@ -128,3 +128,22 @@
 .presentation [data-carousel="projects"]:has(.light-project-slide[aria-hidden="false"]) .carousel-arrow{color:#111;text-shadow:none}
 .presentation [data-carousel="projects"]:has(.light-project-slide[aria-hidden="false"]) .carousel-dot::after{background:#777}
 .presentation [data-carousel="projects"]:has(.light-project-slide[aria-hidden="false"]) .carousel-dot[aria-current="true"]::after{background:#111}
+
+/* Native vertical scrolling on phones: one page, no nested section scroll traps. */
+html:has(.mobile-flow),body:has(.mobile-flow){height:auto;overflow:visible;scroll-behavior:smooth}
+.site.presentation.mobile-flow{height:auto;min-height:100svh;width:100%;margin:0;overflow:clip;border-radius:0;display:block}
+.mobile-flow main{display:block}
+.presentation.mobile-flow .slide-panel{position:relative;inset:auto;height:auto;min-height:0!important;overflow:visible;overscroll-behavior:auto;scroll-margin-top:16px;padding:28px 16px}
+.presentation.mobile-flow .featured-art-area{container-type:normal;display:block;flex:none;width:100%}
+.presentation.mobile-flow .featured-section .hero{width:100%;height:auto;aspect-ratio:100/51;min-height:0}
+.presentation.mobile-flow .project-grid{flex:none;width:100%;height:auto;min-height:0;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows: minmax(280px,48svh) repeat(2,auto)}
+.presentation.mobile-flow .project-tile{height:auto;aspect-ratio:1}
+.presentation.mobile-flow .project-feature{grid-column:1/-1;grid-row:1;height:100%}
+.presentation.mobile-flow .feedback-panel.carousel{height:auto;min-height:0;flex:none}
+.presentation.mobile-flow .feedback-story{position:relative;grid-template-columns:1fr;grid-template-rows:auto auto;padding:22px 32px 48px;gap:18px}
+.presentation.mobile-flow .feedback-story .feedback-art{width:160px;height:160px;justify-self:center}
+.presentation.mobile-flow .feedback-long .feedback-copy{max-height:none;overflow:visible;padding-right:0}
+.presentation.mobile-flow .contact{padding:0;display:flex;flex-direction:column}
+@media(prefers-reduced-motion:reduce){html:has(.mobile-flow),body:has(.mobile-flow){scroll-behavior:auto}}
+.presentation.mobile-flow .feedback-panel .carousel-track{height:auto;align-items:flex-start}
+.presentation.mobile-flow .feedback-story{height:auto}
