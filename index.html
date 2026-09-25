@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="finishing.css?v=14">
   <script src="script.js?v=28" defer></script>
   <script src="contact.js?v=9" defer></script>
-  <script src="sections.js?v=5" defer></script>
+  <script src="sections.js?v=6" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#about">Skip to content</a>
@@ -28,16 +28,15 @@
     </header>
     <div class="ticker" aria-hidden="true"><span>dinamite • dinamite • dinamite • dinamite • dinamite • dinamite • dinamite • dinamite • dinamite •</span></div>
     <main>
-      <section id="featured" class="featured-section" data-slide aria-label="Featured work">
-      <div class="featured-art-area">
-      <section class="hero carousel" data-carousel="featured" aria-label="Featured projects" aria-roledescription="carousel" tabindex="0">
-        <img class="hero-art" src="assets/citta-della.webp" alt="Citta Della Pizzaria: red lettering and an illustrated chef mascot on a blue background, by Dinamite Studio." width="1300" height="520" fetchpriority="high">
-      </section>
-      </div>
-      <div class="project-caption featured-caption" data-caption="featured" aria-live="polite">
-        <span>Citta Della Pizzaria</span><p>Visual identity &amp; illustrated mascot for a pizzeria.</p>
-      </div>
-      </section>
+        <section class="projects section" id="projects" data-slide aria-labelledby="projects-heading">
+          <div class="section-heading"><h2 id="projects-heading">Projects</h2></div>
+          <div class="project-grid" aria-label="Project gallery">
+            <div class="project-tile" aria-hidden="true"></div><div class="project-tile" aria-hidden="true"></div>
+            <div class="project-tile" aria-hidden="true"></div><div class="project-tile" aria-hidden="true"></div>
+            <div class="project-feature carousel" data-carousel="projects" role="region" aria-label="Projects" aria-roledescription="carousel" tabindex="0"></div>
+          </div>
+          <div class="project-caption" data-caption="projects" aria-live="polite"><span>Citta Della Pizzaria</span><p>Visual identity &amp; illustrated mascot for a pizzeria.</p></div>
+        </section>
       <section class="about section" id="about" data-slide aria-labelledby="about-heading">
         <div class="about-grid">
           <div class="profile">
@@ -57,15 +56,7 @@
         </div>
       </section>
       <div class="work-sections">
-        <section class="projects section" id="projects" data-slide aria-labelledby="projects-heading">
-          <div class="section-heading"><h2 id="projects-heading">Projects</h2></div>
-          <div class="project-grid" aria-label="Project gallery">
-            <div class="project-tile" aria-hidden="true"></div><div class="project-tile" aria-hidden="true"></div>
-            <div class="project-tile" aria-hidden="true"></div><div class="project-tile" aria-hidden="true"></div>
-            <div class="project-feature carousel" data-carousel="projects" role="region" aria-label="Projects" aria-roledescription="carousel" tabindex="0"></div>
-          </div>
-          <div class="project-caption" data-caption="projects" aria-live="polite"><span>Citta Della Pizzaria</span><p>Visual identity &amp; illustrated mascot for a pizzeria.</p></div>
-        </section>
+
         <section class="feedbacks section" id="feedbacks" data-slide aria-labelledby="feedback-heading">
           <div class="section-heading"><h2 id="feedback-heading">Feedbacks</h2></div>
           <div class="feedback-panel carousel" data-carousel="feedback" role="region" aria-label="Feedbacks" aria-roledescription="carousel" tabindex="0"></div>

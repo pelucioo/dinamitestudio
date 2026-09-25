@@ -41,7 +41,7 @@
     await Promise.all(animations.map(a=>a.finished.catch(()=>{})));old.hidden=true;animations.forEach(a=>a.cancel());incoming.style.zIndex='';incoming.inert=false;current=index;busy=false;wheelReadyAt=performance.now()+120;
     if(updateURL)history.pushState(null,'','#'+incoming.id);sync();if(focus||hadFocus)incoming.focus({preventScroll:true});
   };
-  document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const id=a.hash==='#top'?'featured':a.hash.slice(1),i=panels.findIndex(p=>p.id===id);if(i<0)return;e.preventDefault();show(i,true,true);});
+  document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const id=a.hash==='#top'?'projects':a.hash.slice(1),i=panels.findIndex(p=>p.id===id);if(i<0)return;e.preventDefault();show(i,true,true);});
   addEventListener('hashchange',()=>{const i=panels.findIndex(p=>'#'+p.id===location.hash);if(i>=0)show(i,false,true);});
   const canScroll=(target,direction)=>{for(let e=target instanceof Element?target:panels[current];e&&stage.contains(e);e=e.parentElement){if(/auto|scroll/.test(getComputedStyle(e).overflowY)&&e.scrollHeight>e.clientHeight+2&&(direction>0?e.scrollTop+e.clientHeight<e.scrollHeight-2:e.scrollTop>2))return true;}return false;};
   stage.addEventListener('wheel',e=>{
