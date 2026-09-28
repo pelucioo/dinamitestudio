@@ -14,9 +14,9 @@ const carouselPosts = {
     { image: 'assets/featured-v3/camel.webp', title: 'Camel Club — Dunas Bar', description: 'Visual identity & packaging applications.', alt: 'Red and white Camel Club branding with camel logo, drink cup and food packaging.' }
   ],
   feedback: [
-    { image: 'assets/review1.webp', title: 'Feedback 01', alt: 'Client feedback praising the liver mascot design, clear communication, revisions and color coordination.' },
-    { image: 'assets/review2.webp', title: 'Rep Gringa', alt: 'Rep Gringa: anniversary artwork and a testimonial praising the result and expressing interest in future projects.' },
-    { image: 'assets/review3.webp', title: 'DJ Pierre', alt: 'DJ Pierre: illustrated magician mascot and a testimonial praising the artwork.' },
+    { image: 'assets/feedback/liver.webp', title: 'Feedback 01', fullArtwork:true, alt: 'Red cartoon liver mascot raising a beer mug on black.' },
+    { image: 'assets/feedback/rep-gringa.webp', title: 'Rep Gringa', fullArtwork:true, alt: 'Rep Gringa 15th anniversary T-shirt artwork with illustrated characters and lettering on black.' },
+    { image: 'assets/feedback/dj-pierre.webp', title: 'DJ Pierre', fullArtwork:true, alt: 'Pierre O Bom lettering and a magician with a pink crystal ball on black.' },
     ...pendingPosts('Feedback', 4)
   ],
   projects: [projectPost, ...pendingPosts('Project', 2)]
