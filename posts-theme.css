@@ -47,6 +47,15 @@ body,.site.presentation,.slide-stage,.presentation .slide-panel{background:var(-
 }
 .presentation.mobile-flow .project-grid{grid-template-rows:auto auto auto}
 .presentation.mobile-flow .project-feature{height:auto;min-height:0;aspect-ratio:1}
+.presentation.mobile-flow .carousel .carousel-arrow{width:44px;height:44px;min-height:44px}
+.presentation.mobile-flow .carousel .carousel-dot{width:44px;height:44px;min-height:44px}
+.presentation.mobile-flow .nav-link{min-height:44px}
+.presentation.mobile-flow .feedback-story{padding-bottom:64px}
+.presentation.mobile-flow .field input,.presentation.mobile-flow .field textarea{scroll-margin-block:24px}
+@media(max-width:480px){
+ .presentation.mobile-flow .contact-form form{grid-template-columns:1fr}
+ .presentation.mobile-flow .field textarea{height:130px}
+}
 @media(max-height:700px) and (min-width:761px){
  .presentation .slide-panel:not(.contact){padding-block:16px}
  .presentation .section-heading h2{font-size:32px}

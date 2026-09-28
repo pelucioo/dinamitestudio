@@ -135,7 +135,14 @@ viewer.addEventListener('close', () => {
 const artworkButton = (image, title) => {
   const button = document.createElement('button'); button.type = 'button'; button.className = 'artwork-open';
   button.setAttribute('aria-label', `Enlarge artwork: ${title}`); button.setAttribute('aria-haspopup', 'dialog');
-  const img = document.createElement('img'); img.src = image.src; img.alt = image.alt || title;
+  const img = document.createElement('img');
+  const variants = portfolioImageSources[image.src];
+  if(variants?.length){
+    img.srcset = variants.map(v=>`${v.src} ${v.width}w`).join(', ');
+    img.sizes = '(max-width: 760px) calc(100vw - 32px), 70vw';
+  }
+  img.loading='lazy';img.decoding='async';
+  img.src = image.src; img.alt = image.alt || title;
   img.width = 1300; img.height = 520; button.append(img);
   button.addEventListener('click', () => openArtwork({src:image.fullSrc || image.src, alt:image.alt}, title, button));
   return button;
@@ -155,16 +162,21 @@ document.querySelectorAll('[data-carousel]').forEach(carousel => {
     if (post.video) {
       slide.classList.add('project-video-slide');
       const video=document.createElement('video');
-      video.src=post.video; video.poster=post.poster; video.controls=true;
-      video.playsInline=true; video.preload='metadata';
+      video.poster=portfolioImageSources[post.poster]?.find(v=>v.width===960)?.src || post.poster; video.controls=true;
+      video.playsInline=true; video.preload='none';
       video.muted=true; video.defaultMuted=true; video.loop=true; video.autoplay=true;
       video.setAttribute('aria-label',`${post.title} — project video`);
       slide.append(video);
       // Play only while this project and its section are visible.
+      let inView=false;
       const syncPlayback=()=>{
-        if(document.hidden || video.closest('[inert],[hidden]')) video.pause();
-        else video.play().catch(()=>{});
+        if(!inView || document.hidden || video.closest('[inert],[hidden]')) video.pause();
+        else {
+          if(!video.getAttribute('src')) video.src=post.video;
+          video.play().catch(()=>{});
+        }
       };
+      new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;syncPlayback();},{threshold:0.1}).observe(video);
       new MutationObserver(syncPlayback).observe(carousel.closest('[data-slide]'),{attributes:true,subtree:true,attributeFilter:['inert','hidden']});
       document.addEventListener('visibilitychange',syncPlayback);
     } else if (post.image && post.quote) {
@@ -252,7 +264,11 @@ document.querySelectorAll('[data-carousel]').forEach(carousel => {
         tile.removeAttribute('aria-hidden');tile.dataset.project=String(current);
         tile.setAttribute('aria-label',`${post.title} — artwork ${i+1}`);
         tile.replaceChildren();
-        if(gallery[i]) tile.append(artworkButton(gallery[i],`${post.title} — artwork ${i+1}`));
+        if(gallery[i]) {
+          const art=artworkButton(gallery[i],`${post.title} — artwork ${i+1}`);
+          art.querySelector('img').sizes='(max-width: 760px) calc((100vw - 44px)/2), 25vw';
+          tile.append(art);
+        }
         else {
           const label=document.createElement('span');label.className='tile-pending';
           const title=document.createElement('strong');title.textContent=`Mockup ${String(i).padStart(2,'0')}`;
