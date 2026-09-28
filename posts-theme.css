@@ -1,0 +1,64 @@
+/* Shared visual language with the Dinamite promotional posts. */
+:root{--paper:#f9f8f4;--red:#ed202c;--ink:#111}
+body,.site.presentation,.slide-stage,.presentation .slide-panel{background:var(--paper);color:var(--ink)}
+.site.presentation{border-top:6px solid var(--red)}
+.presentation .header{padding-inline:clamp(20px,4vw,76px);border-bottom:1px solid #d9d8d2}
+.presentation>.ticker{display:none}
+.presentation .nav-link{letter-spacing:.03em}
+.presentation .nav-link:hover,.presentation .nav-link[aria-current="location"]{text-decoration-color:var(--red);text-decoration-thickness:3px;text-underline-offset:8px}
+.presentation .slide-panel{padding:24px clamp(24px,4vw,76px)}
+.presentation .section-heading{display:block}
+.presentation .section-heading::before,.presentation .bio::before,.presentation .contact-form::before{display:block;font:700 12px/1.2 'Anonymous Pro',monospace;letter-spacing:.12em;margin-bottom:10px}
+.presentation .projects .section-heading::before{content:'01 / SELECTED WORK'}
+.presentation .bio::before{content:'02 / THE DESIGNER'}
+.presentation .feedbacks .section-heading::before{content:'03 / CLIENT FEEDBACK'}
+.presentation .contact-form::before{content:'04 / CONTACT'}
+.presentation .section-heading h2,.presentation .bio h1{color:var(--ink);font-size:clamp(32px,3.5vw,56px);line-height:1.04;text-align:left}
+.presentation .project-grid{margin-top:18px;gap:16px}
+.presentation .project-tile,.presentation .project-feature,.presentation .feedback-panel.carousel,.presentation .feedback-story .feedback-art,.presentation .tools img{border-radius:0;box-shadow:none}
+.presentation .projects>.project-caption{border-top:1px solid #222;margin-top:14px;padding-top:10px;font-size:16px}
+.presentation .project-caption p{color:#333}
+.presentation .feedback-panel.carousel{background:transparent;border:0;border-top:1px solid #222;margin-top:20px}
+.presentation .feedback-story{background:var(--paper);color:var(--ink)}
+.presentation .feedback-author{border-left:4px solid var(--red);padding-left:14px}
+.presentation .text-link{color:var(--ink);text-decoration-color:var(--red);text-decoration-thickness:2px}
+.presentation .contact{padding:0;background:var(--paper)}
+.presentation .lets-talk{background:var(--paper);padding:clamp(24px,4vw,76px);border-right:1px solid #d9d8d2}
+.presentation .talk-copy h2,.presentation .talk-copy p{color:var(--ink)}
+.presentation .talk-copy h2{text-align:left;margin-inline:0;font-size:clamp(32px,3.5vw,56px);line-height:1.04}
+.presentation .talk-copy p{font-size:clamp(17px,1.4vw,22px);line-height:1.5;letter-spacing:0}
+.presentation .contact-brands{border-top:1px solid #222;padding-top:18px}
+.presentation .contact-form{padding:24px clamp(24px,4vw,76px)}
+.presentation .contact-form h2{color:var(--ink)}
+.presentation .field input,.presentation .field textarea{border-radius:0;background:#fff;border:1px solid #999}
+.presentation .field input:focus,.presentation .field textarea:focus{border-color:var(--red)}
+.presentation .contact-form form>button{border-radius:0;background:var(--red);border-color:var(--red);color:#fff}
+.presentation .contact-form form>button:hover{background:#111;border-color:#111}
+.presentation .email-link{text-decoration-color:var(--red)}
+.presentation .carousel .carousel-arrow{border-radius:0}
+.presentation .carousel .carousel-dots{border-radius:0}
+.presentation .slide-panel:focus{outline:none}
+@media(min-width:761px){.presentation:not(.mobile-flow) .project-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,2.2fr)}}
+@media(max-height:700px) and (min-width:761px){
+ .presentation .slide-panel:not(.contact){padding-block:16px}
+ .presentation .section-heading h2{font-size:32px}
+ .presentation .section-heading::before{margin-bottom:6px}
+ .presentation .feedback-panel.carousel{min-height:280px;flex-basis:280px}
+ .presentation .contact-form{padding-block:12px}
+ .presentation .lets-talk{padding:24px}
+}
+.presentation.mobile-flow .slide-panel{padding:28px 16px;border-bottom:1px solid #d9d8d2}
+.presentation.mobile-flow .work-sections{margin-top:0}
+.presentation.mobile-flow .contact{padding:0}
+.presentation.mobile-flow .contact-form{padding:28px 20px}
+.presentation.mobile-flow .lets-talk{padding:28px 20px;border-right:0;border-top:1px solid #d9d8d2}
+.presentation.mobile-flow .talk-copy h2{font-size:32px}
+.presentation.mobile-flow .talk-copy p{font-size:16px;line-height:1.5}
+.presentation.mobile-flow .feedback-panel.carousel{border:0}
+@media(max-width:760px){
+ .presentation .header{padding:8px 16px}
+ .presentation .section-heading h2{font-size:34px}
+ .presentation .project-grid{gap:12px}
+ .presentation .project-caption{font-size:15px}
+ .presentation .bio h1{font-size:34px}
+}
