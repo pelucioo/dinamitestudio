@@ -1,5 +1,5 @@
 html:has(.presentation),body:has(.presentation){height:100%;overflow:hidden;scroll-behavior:auto}
-.site.presentation{width:calc(100% - 32px);max-width:1440px;height:calc(100dvh - 24px);margin:12px auto;display:flex;flex-direction:column;border-radius:12px;overflow:hidden}
+.site.presentation{width:100%;max-width:none;height:100dvh;margin:0;display:flex;flex-direction:column;border-radius:0;overflow:hidden}
 .presentation .header{height:82px;min-height:82px;padding:10px 40px}.presentation .header nav{gap:26px}.presentation .brand{width:174px}.presentation .nav-link{font-size:15px;min-height:34px;border-radius:12px}
 .presentation>.ticker{height:30px;min-height:30px;font-size:19px}.presentation>.contact-ticker{display:none}
 .slide-stage{position:relative;flex:1;min-height:0;overflow:hidden;background:white;isolation:isolate}
