@@ -38,7 +38,14 @@ body,.site.presentation,.slide-stage,.presentation .slide-panel{background:var(-
 .presentation .carousel .carousel-arrow{border-radius:0}
 .presentation .carousel .carousel-dots{border-radius:0}
 .presentation .slide-panel:focus{outline:none}
-@media(min-width:761px){.presentation:not(.mobile-flow) .project-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,2.2fr)}}
+.project-area{display:contents}
+@media(min-width:761px){
+ .presentation:not(.mobile-flow) .project-area{display:grid;place-items:center;container-type:size;flex:1;min-height:0;margin-top:18px}
+ .presentation:not(.mobile-flow) .project-grid{width:min(100cqw,calc(200cqh + 16px));height:calc((min(100cqw,calc(200cqh + 16px)) - 16px)/2);min-height:0;margin:0;grid-template-columns:minmax(0,1fr) minmax(0,1fr) calc(50% - 8px);grid-template-rows:repeat(2,minmax(0,1fr));gap:16px}
+ .presentation:not(.mobile-flow) .project-tile,.presentation:not(.mobile-flow) .project-feature{aspect-ratio:1}
+}
+.presentation.mobile-flow .project-grid{grid-template-rows:auto auto auto}
+.presentation.mobile-flow .project-feature{height:auto;min-height:0;aspect-ratio:1}
 @media(max-height:700px) and (min-width:761px){
  .presentation .slide-panel:not(.contact){padding-block:16px}
  .presentation .section-heading h2{font-size:32px}
